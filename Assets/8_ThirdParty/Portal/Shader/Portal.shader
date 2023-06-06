@@ -28,8 +28,8 @@
                 float4 screenPos : TEXCOORD0;
             };
 
-            sampler2D _BaseMap;
-            float4 _InactiveColor;
+            sampler2D _MainTex;
+            float4 _InactiveColour;
             int displayMask; // set to 1 to display texture, otherwise will draw test colour
             
 
@@ -44,8 +44,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 uv = i.screenPos.xy / i.screenPos.w;
-                fixed4 portalCol = tex2D(_BaseMap, uv);
-                return portalCol * displayMask + _InactiveColor * (1-displayMask);
+                fixed4 portalCol = tex2D(_MainTex, uv);
+                return portalCol * displayMask + _InactiveColour * (1-displayMask);
             }
             ENDCG
         }

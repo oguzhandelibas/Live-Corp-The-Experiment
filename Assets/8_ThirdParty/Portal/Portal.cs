@@ -67,6 +67,7 @@ public class Portal : MonoBehaviour {
         foreach (var traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
         }
+        print("PreRender");
     }
 
     // Manually render the camera attached to this portal
@@ -77,7 +78,7 @@ public class Portal : MonoBehaviour {
         if (!CameraUtility.VisibleFromCamera (linkedPortal.screen, playerCam)) {
             return;
         }
-
+print("Render");
         CreateViewTexture ();
 
         var localToWorldMatrix = playerCam.transform.localToWorldMatrix;
@@ -181,6 +182,7 @@ public class Portal : MonoBehaviour {
             UpdateSliceParams (traveller);
         }
         ProtectScreenFromClipping (playerCam.transform.position);
+        print("PostRender");
     }
     void CreateViewTexture () {
         if (viewTexture == null || viewTexture.width != Screen.width || viewTexture.height != Screen.height) {
