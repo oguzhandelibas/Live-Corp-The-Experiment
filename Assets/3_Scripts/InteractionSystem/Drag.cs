@@ -19,7 +19,7 @@ public class Drag : MonoBehaviour, IInteractable
         {
             DropObject();
         }
-        
+        UIManager.Instance.OpenTipPanel(TipPanelType.HackTip, true);
     }
 
     public void OnInteract()
