@@ -1168,8 +1168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4a4a5c55883144da39b9ebc3687984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Crosshair: {fileID: 0}
-  InteractRange: 100
+  Crosshair: {fileID: 606725216}
+  InteractRange: 50
 --- !u!1001 &528076620
 PrefabInstance:
   m_ObjectHideFlags: 0
