@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class InteractionTest : MonoBehaviour, IInteractable
 {
-    public void Interact()
+    public void InteractStart(GameObject interactObject)
     {
-        Destroy(gameObject);
+        throw new System.NotImplementedException();
+    }
+
+    public void OnInteract()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void InteractEnd()
+    {
+        throw new System.NotImplementedException();
     }
 }

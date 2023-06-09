@@ -1,4 +1,8 @@
+using UnityEngine;
+
 public interface IInteractable
 {
-    public void Interact();
+    public void InteractStart(GameObject interactObject);
+    public void OnInteract();
+    public void InteractEnd();
 }
