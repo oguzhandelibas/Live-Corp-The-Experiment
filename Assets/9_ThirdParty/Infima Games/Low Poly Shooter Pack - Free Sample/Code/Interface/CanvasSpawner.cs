@@ -27,7 +27,7 @@ namespace InfimaGames.LowPolyShooterPack.Interface
         private void Awake()
         {
             //Spawn Interface.
-            Instantiate(canvasPrefab);
+            Instantiate(canvasPrefab, transform.parent);
         }
 
         #endregion

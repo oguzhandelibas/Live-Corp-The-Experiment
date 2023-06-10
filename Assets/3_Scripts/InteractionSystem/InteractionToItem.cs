@@ -1,49 +1,34 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class InteractionToItem : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer Crosshair;
+    [SerializeField] private Transform lookPoint;
+    [SerializeField] private Image Crosshair;
     [SerializeField] private float InteractRange;
-    
-    
-    
+
+
+    private Ray r;
+    private IInteractable Interactable;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        r = new Ray(lookPoint.transform.position, lookPoint.transform.forward);
+        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
-            Ray r = new Ray(Crosshair.transform.position, Crosshair.transform.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                Interactable = interactObj;
+                Crosshair.color = Color.green;
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interactObj.InteractStart(hitInfo.collider.gameObject);
+                    interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint);
                 }
             }
-        }
-        
-        if (Input.GetKey(KeyCode.E))
-        {
-            Ray r = new Ray(Crosshair.transform.position, Crosshair.transform.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+            else
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    //interactObj.OnInteract();
-                }
-            }
-        }
-        
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            Ray r = new Ray(Crosshair.transform.position, Crosshair.transform.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
-            {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    //interactObj.InteractEnd();
-                }
+                Crosshair.color = Color.white;
             }
         }
     }

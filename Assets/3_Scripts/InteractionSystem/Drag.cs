@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour, IInteractable
 {
-    public Transform holdParent;
     private GameObject heldObj;
     private Transform beforeHoldingTransform;
     
-    public void InteractStart(GameObject interactObject)
+    public void InteractStart(GameObject interactObject, Transform parent)
     {
         if (heldObj == null)
         {
-            PickupObject(interactObject);
+            PickupObject(interactObject, parent);
         }
         else
         {
             DropObject();
         }
-        UIManager.Instance.OpenTipPanel(TipPanelType.HackTip, true);
     }
 
     public void OnInteract()
@@ -33,23 +31,25 @@ public class Drag : MonoBehaviour, IInteractable
     }
     
     
-    void PickupObject(GameObject pickObj)
+    void PickupObject(GameObject pickObj, Transform parent)
     {
         if (pickObj.GetComponent<Rigidbody>())
         {
             beforeHoldingTransform = pickObj.transform.parent;
+            
             Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
+            Transform objectTransform = pickObj.transform;
+            
             objRig.useGravity = false;
             objRig.isKinematic = true;
             objRig.drag = 10;
 
-            objRig.transform.parent = holdParent;
-            
-            objRig.transform.localRotation = Quaternion.Euler(0,0,0);
-            objRig.transform.localPosition = new Vector3(0, 0, 5);
+            objectTransform.parent = parent;
+            objectTransform.localRotation = Quaternion.Euler(0,0,0);
+            objectTransform.localPosition = new Vector3(0, 0, 2);
+            objectTransform.DORotate(new Vector3(5, 5, 5), 1);
             
             heldObj = pickObj;
-
         }
     }
         
@@ -57,11 +57,12 @@ public class Drag : MonoBehaviour, IInteractable
     {
         if (heldObj == null) return;
         Rigidbody heldRig = heldObj.GetComponent<Rigidbody>();
+        
         heldRig.useGravity = true;
         heldRig.isKinematic = false;
         heldRig.drag = 1;
+        
         heldObj.transform.SetParent(beforeHoldingTransform);
-        //heldObj.transform.parent = null;
         heldObj = null;
     }
 

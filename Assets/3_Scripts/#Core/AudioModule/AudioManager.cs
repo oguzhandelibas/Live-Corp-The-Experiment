@@ -31,18 +31,15 @@ public class AudioManager : AbstractSingleton<AudioManager>
         {
             if (audioSource.isPlaying)
             {
-                print("Add List");
                 PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
             }
             else
             {
-                print("Play With Index");
                 Play(AudioDatas.AudioClips[index], index);
             }
         }
         else
         {
-            print("Play First");
             Play(PlayList[0].audioClip, PlayList[0].Index);
             PlayList.RemoveAt(0);
         }
@@ -52,7 +49,6 @@ public class AudioManager : AbstractSingleton<AudioManager>
 
     private void Play(AudioClip clip, int index)
     {
-        print("Oyna");
         audioSource.clip = clip;
         audioSource.Play();
         SubtitleManager.Instance.SetSubText(AudioDatas.AudioText[index], audioSource.clip.length);
@@ -61,7 +57,6 @@ public class AudioManager : AbstractSingleton<AudioManager>
 
     private void CheckPlayList()
     {
-        print("Kontrol Et");
         if (PlayList.Count > 0)
         {
             Play(PlayList[0].audioClip, PlayList[0].Index);
