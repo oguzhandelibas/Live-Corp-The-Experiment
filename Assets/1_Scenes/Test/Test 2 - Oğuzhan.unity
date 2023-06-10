@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2161.7666, g: 2265.6992, b: 3288.879, a: 1}
+  m_IndirectSpecularColor: {r: 2159.745, g: 2263.629, b: 3286.6797, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2205,6 +2205,11 @@ PrefabInstance:
     - target: {fileID: 272919066, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: cameraWorld
       value: 
+      objectReference: {fileID: 2117295766}
+    - target: {fileID: 1829886744579052491, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
+        type: 3}
+      propertyPath: ammunitionTotal
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
