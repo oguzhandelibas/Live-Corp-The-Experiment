@@ -35,7 +35,7 @@ public class UIManager : AbstractSingleton<UIManager>
         {
             foreach (var view in m_Views)
                 view.Hide();
-            Show<PlayerPanel>();
+            Show<MainMenuPanel>();
             m_History.Clear();
         }
 
