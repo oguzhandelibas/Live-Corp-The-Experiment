@@ -4,25 +4,14 @@ using UnityEngine;
 
 public class BootLoader : AbstractSingleton<BootLoader>
 {
-    private GameObject mainMenu;
-    private GameObject game;
+    [SerializeField] private GameObject gamePrefab;
 
-    private void Start()
+    public void CreateGameLevel()
     {
-        mainMenu = transform.GetChild(0).gameObject;
-    }
-        
-    public void CreateGameLevel(GameObject referenceObject)
-    {
-        var gameObj = Instantiate(referenceObject);
+        var gameObj = Instantiate(gamePrefab);
         gameObj.name = "--->" + gameObj.name;
-        mainMenu.SetActive(true);
-    }
+        UIManager.Instance.Show<PlayerPanel>();
         
-    private void DeactivateMenu(GameObject gameObj)
-    {
-        game = gameObj;
-        mainMenu.SetActive(false);
     }
-    
+
 }
