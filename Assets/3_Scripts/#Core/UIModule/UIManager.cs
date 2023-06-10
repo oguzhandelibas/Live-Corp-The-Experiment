@@ -21,8 +21,6 @@ public class UIManager : AbstractSingleton<UIManager>
         
         private int gameIndex;
         private int unitIndex;
-        public int GameIndex {get => gameIndex; set => gameIndex = value;}
-        public int UnitIndex {get => unitIndex; set => unitIndex = value;}
         void Start()
         {
             m_Views = m_Root.GetComponentsInChildren<View>(true).ToList();
