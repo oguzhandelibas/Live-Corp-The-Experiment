@@ -1,7 +1,9 @@
 ﻿// Copyright 2021, Infima Games. All Rights Reserved.
 
 using System.Linq;
+using UnityEditor.Media;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace InfimaGames.LowPolyShooterPack
 {
@@ -27,6 +29,8 @@ namespace InfimaGames.LowPolyShooterPack
 
         [Tooltip("How fast the player moves while running."), SerializeField]
         private float speedRunning = 9.0f;
+
+        [Header("Jump")] [SerializeField] private float jumpForce = 12.0f; 
 
         #endregion
 
@@ -62,7 +66,6 @@ namespace InfimaGames.LowPolyShooterPack
         /// True if the character is currently grounded.
         /// </summary>
         private bool grounded;
-
         /// <summary>
         /// Player Character.
         /// </summary>
@@ -136,6 +139,9 @@ namespace InfimaGames.LowPolyShooterPack
             //Move.
             MoveCharacter();
             
+            //Jump.
+            Jump();
+            
             //Unground.
             grounded = false;
         }
@@ -154,6 +160,15 @@ namespace InfimaGames.LowPolyShooterPack
 
         #region METHODS
 
+        private void Jump()
+        {
+            if (playerCharacter.IsJump() && grounded)
+            {
+                rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
+
+        }
+        
         private void MoveCharacter()
         {
             #region Calculate Movement Velocity
@@ -178,7 +193,7 @@ namespace InfimaGames.LowPolyShooterPack
             #endregion
             
             //Update Velocity.
-            Velocity = new Vector3(movement.x, 0.0f, movement.z);
+            Velocity = new Vector3(movement.x, Velocity.y, movement.z);
         }
 
         /// <summary>

@@ -68,6 +68,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         public abstract bool IsTutorialTextVisible();
 
+        public abstract bool IsJump();
         /// <summary>
         /// Returns the Movement Input.
         /// </summary>

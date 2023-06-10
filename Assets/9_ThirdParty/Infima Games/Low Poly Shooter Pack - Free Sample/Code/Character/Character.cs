@@ -117,6 +117,8 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		private bool holstering;
 
+		private bool isJump;
+		
 		/// <summary>
 		/// Look Axis Values.
 		/// </summary>
@@ -246,14 +248,14 @@ namespace InfimaGames.LowPolyShooterPack
 
 		public override InventoryBehaviour GetInventory() => inventory;
 		
-		public override bool IsCrosshairVisible() => !aiming && !holstered;
+		public override bool IsCrosshairVisible() => !aiming /*&& !holstered*/;
 		public override bool IsRunning() => running;
 		
 		public override bool IsAiming() => aiming;
 		public override bool IsCursorLocked() => cursorLocked;
 		
 		public override bool IsTutorialTextVisible() => tutorialTextVisible;
-		
+		public override bool IsJump() => isJump;
 		public override Vector2 GetInputMovement() => axisMovement;
 		public override Vector2 GetInputLook() => axisLook;
 
@@ -601,6 +603,23 @@ namespace InfimaGames.LowPolyShooterPack
 					break;
 			}
 		}
+		
+		public void OnTryJump(InputAction.CallbackContext context)
+		{
+			switch (context)
+			{
+				//Started.
+				case {phase: InputActionPhase.Started}:
+					isJump = true;
+					break;
+				//Canceled.
+				case {phase: InputActionPhase.Canceled}:
+					isJump = false;
+					break;
+			}
+		}
+		
+		
 		/// <summary>
 		/// Reload.
 		/// </summary>
@@ -696,6 +715,7 @@ namespace InfimaGames.LowPolyShooterPack
 					break;
 			}
 		}
+
 		/// <summary>
 		/// Run. 
 		/// </summary>
