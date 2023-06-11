@@ -545,6 +545,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866118603598738406, guid: 58fe01c23f9a7844384532ae4be4d071,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 1288116e5192cd84b808721e453eb7e7,
+        type: 2}
     - target: {fileID: 8168819846630117044, guid: 58fe01c23f9a7844384532ae4be4d071,
         type: 3}
       propertyPath: cameraWorld

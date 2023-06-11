@@ -3,6 +3,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine.InputSystem;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -47,7 +48,6 @@ namespace InfimaGames.LowPolyShooterPack
 		#endregion
 
 		#region FIELDS
-
 		/// <summary>
 		/// True if the character is aiming.
 		/// </summary>
@@ -172,7 +172,7 @@ namespace InfimaGames.LowPolyShooterPack
 		protected override void Awake()
 		{
 			#region Lock Cursor
-
+			
 			//Always make sure that our cursor is locked when the game starts!
 			cursorLocked = true;
 			//Update the cursor's state.
@@ -197,6 +197,8 @@ namespace InfimaGames.LowPolyShooterPack
 			layerActions = characterAnimator.GetLayerIndex("Layer Actions");
 			//Cache a reference to the overlay layer's index.
 			layerOverlay = characterAnimator.GetLayerIndex("Layer Overlay");
+			
+			SetHolstered(true);
 		}
 
 		protected override void Update()
@@ -256,6 +258,8 @@ namespace InfimaGames.LowPolyShooterPack
 		
 		public override bool IsTutorialTextVisible() => tutorialTextVisible;
 		public override bool IsJump() => isJump;
+		public override bool HasGun() => !holstered;
+
 		public override Vector2 GetInputMovement() => axisMovement;
 		public override Vector2 GetInputLook() => axisLook;
 
@@ -268,6 +272,8 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		private void UpdateAnimator()
 		{
+			Debug.Log(HasGun());
+			if(!HasGun()) return;
 			//Movement Value. This value affects absolute movement. Aiming movement uses this, as opposed to per-axis movement.
 			characterAnimator.SetFloat(HashMovement, Mathf.Clamp01(Mathf.Abs(axisMovement.x) + Mathf.Abs(axisMovement.y)), dampTimeLocomotion, Time.deltaTime);
 			
@@ -403,7 +409,6 @@ namespace InfimaGames.LowPolyShooterPack
 		{
 			//Update value.
 			holstered = value;
-			
 			//Update Animator.
 			const string boolName = "Holstered";
 			characterAnimator.SetBool(boolName, holstered);	
@@ -712,6 +717,7 @@ namespace InfimaGames.LowPolyShooterPack
 						//Holstering.
 						holstering = true;
 					}
+					
 					break;
 			}
 		}

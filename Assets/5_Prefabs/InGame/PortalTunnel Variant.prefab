@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1133570883354816, guid: 1196e6796edfd454e9e9fe11e8df782d, type: 3}
       propertyPath: m_Name
-      value: PortalTunnel
+      value: PortalTunnel Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1871589183148802, guid: 1196e6796edfd454e9e9fe11e8df782d, type: 3}
       propertyPath: m_IsActive
