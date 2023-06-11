@@ -14,7 +14,13 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Returns The Total Ammunition.
         /// </summary>
-        public abstract int GetAmmunitionTotal();
+        public abstract int GetAmmunitionCapacity();
+
+        public abstract int GetMagazine();
+        public abstract int GetMagazineCapacity();
+        public abstract int GetAmmunition();
+        public abstract void SetAmmunition(int ammunition);
+        public abstract void SetMagazine(int value);
         /// <summary>
         /// Returns the Sprite used on the Character's Interface.
         /// </summary>

@@ -17,7 +17,7 @@ namespace InfimaGames.LowPolyShooterPack.Interface
         protected override void Tick()
         {
             //Total Ammunition.
-            float ammunitionTotal = equippedWeapon.GetAmmunitionTotal();
+            float ammunitionTotal = equippedWeapon.GetBackupAmmunition();
             
             //Update Text.
             textMesh.text = ammunitionTotal.ToString(CultureInfo.InvariantCulture);

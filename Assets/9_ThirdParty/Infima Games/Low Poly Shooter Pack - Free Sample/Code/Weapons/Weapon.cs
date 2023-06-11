@@ -99,7 +99,9 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Amount of ammunition left.
         /// </summary>
-        private int ammunitionCurrent;
+        private int magazineCount;
+
+        private int ammunationCount;
 
         #region Attachment Behaviours
         
@@ -158,7 +160,8 @@ namespace InfimaGames.LowPolyShooterPack
             #endregion
 
             //Max Out Ammo.
-            ammunitionCurrent = magazineBehaviour.GetAmmunitionTotal();
+            magazineCount = magazineBehaviour.GetMagazine();
+            ammunationCount = magazineBehaviour.GetAmmunition();
         }
 
         #endregion
@@ -178,16 +181,31 @@ namespace InfimaGames.LowPolyShooterPack
         public override AudioClip GetAudioClipFireEmpty() => audioClipFireEmpty;
         
         public override AudioClip GetAudioClipFire() => muzzleBehaviour.GetAudioClipFire();
-        
-        public override int GetAmmunitionCurrent() => ammunitionCurrent;
 
-        public override int GetAmmunitionTotal() => magazineBehaviour.GetAmmunitionTotal();
+
+        #region MAGAZINE & AMMUNATION
+
+        public override int GetMagazine() => magazineBehaviour.GetMagazine();
+
+        public override int GetBackupAmmunition()
+        {
+            int backup = ammunationCount - magazineCount;
+            if (backup < 0) backup = 0;
+            return backup;
+        }
+        
+        public override bool HasMagazine() => magazineBehaviour.GetMagazine() > 0;
+        public override bool HasAmmunition() => magazineBehaviour.GetAmmunition() > 0;
+
+        
+        
+        #endregion
+        
 
         public override bool IsAutomatic() => automatic;
         public override float GetRateOfFire() => roundsPerMinutes;
         
-        public override bool IsFull() => ammunitionCurrent == magazineBehaviour.GetAmmunitionTotal();
-        public override bool HasAmmunition() => ammunitionCurrent > 0;
+        
 
         public override RuntimeAnimatorController GetAnimatorController() => controller;
         public override WeaponAttachmentManagerBehaviour GetAttachmentManager() => attachmentManager;
@@ -199,6 +217,7 @@ namespace InfimaGames.LowPolyShooterPack
         public override void Reload()
         {
             //Play Reload Animation.
+            
             animator.Play(HasAmmunition() ? "Reload" : "Reload Empty", 0, 0.0f);
         }
         public override void Fire(float spreadMultiplier = 1.0f)
@@ -218,8 +237,10 @@ namespace InfimaGames.LowPolyShooterPack
             const string stateName = "Fire";
             animator.Play(stateName, 0, 0.0f);
             //Reduce ammunition! We just shot, so we need to get rid of one!
-            ammunitionCurrent = Mathf.Clamp(ammunitionCurrent - 1, 0, magazineBehaviour.GetAmmunitionTotal());
-
+            //magazineCount = Mathf.Clamp(magazineCount - 1, 0, magazineBehaviour.GetMagazineCapacity());
+            magazineBehaviour.SetMagazine(-1);
+            magazineBehaviour.SetAmmunition(1);
+            
             //Play all muzzle effects.
             muzzleBehaviour.Effect();
             
@@ -239,9 +260,16 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void FillAmmunition(int amount)
         {
+            if(!HasAmmunition()) return;
+            int value = magazineBehaviour.GetMagazineCapacity() - magazineBehaviour.GetMagazine(); // 5 - 1 = 4
+            //magazineBehaviour.SetAmmunition(value);
+            magazineBehaviour.SetMagazine(value);
+            magazineCount = magazineBehaviour.GetMagazine();
+            ammunationCount = magazineBehaviour.GetAmmunition();
+
             //Update the value by a certain amount.
-            ammunitionCurrent = amount != 0 ? Mathf.Clamp(ammunitionCurrent + amount, 
-                0, GetAmmunitionTotal()) : magazineBehaviour.GetAmmunitionTotal();
+            /*magazineCurrent = amount != 0 ? Mathf.Clamp(magazineCurrent + amount, 
+                0, magazineBehaviour.GetMagazineCapacity()) : magazineBehaviour.GetMagazineCapacity();*/
         }
 
         public override void EjectCasing()

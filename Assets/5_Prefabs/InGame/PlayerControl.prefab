@@ -1905,6 +1905,7 @@ MonoBehaviour:
   audioClipRunning: {fileID: 8300000, guid: d2add02f58e61e640aba3ae9110591cb, type: 3}
   speedWalking: 4
   speedRunning: 6.8
+  jumpForce: 12
 --- !u!114 &8168819846630117044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,6 +3318,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ammunitionTotal
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382364558728836416, guid: 9482e0a2ae6a92742bbe72e00f29f763,
+        type: 3}
+      propertyPath: magazineCurrent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382364558728836416, guid: 9482e0a2ae6a92742bbe72e00f29f763,
+        type: 3}
+      propertyPath: ammunitionCurrent
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5494294954181237878, guid: 9482e0a2ae6a92742bbe72e00f29f763,
         type: 3}

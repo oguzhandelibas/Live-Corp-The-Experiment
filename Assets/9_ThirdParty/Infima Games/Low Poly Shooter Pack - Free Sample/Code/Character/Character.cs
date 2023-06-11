@@ -210,7 +210,7 @@ namespace InfimaGames.LowPolyShooterPack
 			if (holdingButtonFire)
 			{
 				//Check.
-				if (CanPlayAnimationFire() && equippedWeapon.HasAmmunition() && equippedWeapon.IsAutomatic())
+				if (CanPlayAnimationFire() && equippedWeapon.HasMagazine() && equippedWeapon.IsAutomatic())
 				{
 					//Has fire rate passed.
 					if (Time.time - lastShotTime > 60.0f / equippedWeapon.GetRateOfFire())
@@ -312,7 +312,7 @@ namespace InfimaGames.LowPolyShooterPack
 		private void PlayReloadAnimation()
 		{
 			#region Animation
-
+			if(!equippedWeapon.HasAmmunition()) return;
 			//Get the name of the animation state to play, which depends on weapon settings, and ammunition!
 			string stateName = equippedWeapon.HasAmmunition() ? "Reload" : "Reload Empty";
 			//Play the animation state!
@@ -582,7 +582,7 @@ namespace InfimaGames.LowPolyShooterPack
 						break;
 					
 					//Check.
-					if (equippedWeapon.HasAmmunition())
+					if (equippedWeapon.HasMagazine())
 					{
 						//Check.
 						if (equippedWeapon.IsAutomatic())

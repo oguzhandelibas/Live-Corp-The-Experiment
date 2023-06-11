@@ -36,10 +36,8 @@ namespace InfimaGames.LowPolyShooterPack.Interface
         protected override void Tick()
         {
             //Current Ammunition.
-            float current = equippedWeapon.GetAmmunitionCurrent();
-            //Total Ammunition.
-            float total = equippedWeapon.GetAmmunitionTotal();
-            
+            float current = equippedWeapon.GetMagazine();
+
             //Update Text.
             textMesh.text = current.ToString(CultureInfo.InvariantCulture);
 
@@ -47,9 +45,9 @@ namespace InfimaGames.LowPolyShooterPack.Interface
             if (updateColor)
             {
                 //Calculate Color Alpha. Helpful to make the text color change based on count.
-                float colorAlpha = (current / total) * emptySpeed;
+                float colorAlpha = (current / 10) * emptySpeed;
                 //Lerp Color. This makes sure that the text color changes based on count.
-                textMesh.color = Color.Lerp(emptyColor, Color.white, colorAlpha);   
+                textMesh.color = Color.Lerp(emptyColor, Color.green, colorAlpha);   
             }
         }
         
