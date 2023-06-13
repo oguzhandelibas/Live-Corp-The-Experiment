@@ -22,12 +22,12 @@ public class Drag : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void InteractEnd()
     {
-        throw new System.NotImplementedException();
+        
     }
     
     
