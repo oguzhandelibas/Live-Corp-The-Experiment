@@ -1,18 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using InfimaGames.LowPolyShooterPack;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : AbstractSingleton<PlayerController>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Character _character;
+    private bool canMove;
+    public bool CanMove { get => canMove; set => canMove = value; }
+    [SerializeField] private GameObject ammoIndicatorObject;
+
+    private void Start()
     {
-        
+        ammoIndicatorObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetGun()
     {
-        
+        _character.HolsterIssue();
+        ammoIndicatorObject.SetActive(true);
     }
 }

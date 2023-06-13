@@ -1,4 +1,5 @@
 using System;
+using MiniGame.YesYes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,11 @@ public class InteractionToItem : MonoBehaviour
         r = new Ray(lookPoint.transform.position, lookPoint.transform.forward);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
+            if (hitInfo.collider.gameObject.TryGetComponent(out ChoicePlatform choicePlatform))
+            {
+                if(!choicePlatform.yes) choicePlatform.Change();
+            }
+
             if (Interactable==null && hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 Interactable = interactObj;
@@ -38,11 +44,10 @@ public class InteractionToItem : MonoBehaviour
                     Interactable.InteractEnd();
                     Crosshair.enabled = true;
                 }
-            }
-
-            if (!Input.GetKey(KeyCode.E))
-            {
-                Interactable = null;
+                if (!Input.GetKey(KeyCode.E))
+                {
+                    Interactable = null;
+                }
             }
         }
     }

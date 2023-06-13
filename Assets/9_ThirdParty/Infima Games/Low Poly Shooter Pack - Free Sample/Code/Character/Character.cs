@@ -151,8 +151,6 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		private bool cursorLocked;
 
-		public bool canMove;
-
 		#endregion
 
 		#region CONSTANTS
@@ -193,7 +191,6 @@ namespace InfimaGames.LowPolyShooterPack
 		}
 		protected override void Start()
 		{
-			canMove = true;
 			//Cache a reference to the holster layer's index.
 			layerHolster = characterAnimator.GetLayerIndex("Layer Holster");
 			//Cache a reference to the action layer's index.
@@ -206,7 +203,6 @@ namespace InfimaGames.LowPolyShooterPack
 
 		protected override void Update()
 		{
-			if(!canMove) return;
 			//Match Aim.
 			aiming = holdingButtonAim && CanAim();
 			//Match Run.
@@ -230,7 +226,6 @@ namespace InfimaGames.LowPolyShooterPack
 
 		protected override void LateUpdate()
 		{
-			if(!canMove) return;
 			//We need a weapon for this!
 			if (equippedWeapon == null)
 				return;
@@ -714,15 +709,20 @@ namespace InfimaGames.LowPolyShooterPack
 				//Performed.
 				case InputActionPhase.Performed:
 					//Check.
-					if (CanPlayAnimationHolster())
-					{
-						//Set.
-						SetHolstered(!holstered);
-						//Holstering.
-						holstering = true;
-					}
+					HolsterIssue();
 					
 					break;
+			}
+		}
+
+		public void HolsterIssue()
+		{
+			if (CanPlayAnimationHolster())
+			{
+				//Set.
+				SetHolstered(!holstered);
+				//Holstering.
+				holstering = true;
 			}
 		}
 
