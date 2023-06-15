@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Player;
 using InfimaGames.LowPolyShooterPack;
 
 namespace MiniGame.YesYes
