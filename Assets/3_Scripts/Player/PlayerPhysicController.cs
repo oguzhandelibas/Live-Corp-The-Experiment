@@ -1,16 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using MiniGame.YesYes;
 using UnityEngine;
 
-public class PlayerPhysicController : MonoBehaviour
+namespace Player
 {
-    private void OnTriggerEnter(Collider other)
+    public class PlayerPhysicController : MonoBehaviour
     {
-        if (other.TryGetComponent(out YesYesController yesController))
+        private void OnTriggerEnter(Collider other)
         {
-            yesController.ActivateChoosePlatform();
+            if (other.TryGetComponent(out YesYesController yesController))
+            {
+                yesController.ActivateChoosePlatform();
+            }
         }
     }
 }
+

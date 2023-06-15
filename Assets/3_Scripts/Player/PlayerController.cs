@@ -1,21 +1,25 @@
 using InfimaGames.LowPolyShooterPack;
 using UnityEngine;
 
-public class PlayerController : AbstractSingleton<PlayerController>
+namespace Player
 {
-    [SerializeField] private Character _character;
-    private bool canMove;
-    public bool CanMove { get => canMove; set => canMove = value; }
-    [SerializeField] private GameObject ammoIndicatorObject;
-
-    private void Start()
+    public class PlayerController : AbstractSingleton<PlayerController>
     {
-        ammoIndicatorObject.SetActive(false);
-    }
+        [SerializeField] private Character _character;
+        private bool canMove;
+        public bool CanMove { get => canMove; set => canMove = value; }
+        [SerializeField] private GameObject ammoIndicatorObject;
 
-    public void SetGun()
-    {
-        _character.HolsterIssue();
-        ammoIndicatorObject.SetActive(true);
+        private void Start()
+        {
+            ammoIndicatorObject.SetActive(false);
+        }
+
+        public void SetGun()
+        {
+            _character.HolsterIssue();
+            ammoIndicatorObject.SetActive(true);
+        }
     }
 }
+
