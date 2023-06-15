@@ -1,24 +1,19 @@
-// --------------------------------------
-// This script is totally optional. It is an example of how you can use the
-// destructible versions of the objects as demonstrated in my tutorial.
-// Watch the tutorial over at http://youtube.com/brackeys/.
-// --------------------------------------
-
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class BracKeys: MonoBehaviour {
-
-	public GameObject destroyedVersion;	// Reference to the shattered version of the object
-
-	// If the player clicks on the object
-	void OnMouseDown ()
+namespace BreakableBox
+{
+	public class Destructible: MonoBehaviour 
 	{
-		// Spawn a shattered object
-		Instantiate(destroyedVersion, transform.position, transform.rotation);
-		// Remove the current object
-		Destroy(gameObject);
-	}
 
+		public GameObject destroyedVersion;
+		public bool CanBreak { get; set; }
+		private void OnCollisionEnter(Collision other)
+		{
+			if(!CanBreak) return;
+			Instantiate(destroyedVersion, transform.position, transform.rotation);
+			Destroy(gameObject);
+		}
+	}
 }
+

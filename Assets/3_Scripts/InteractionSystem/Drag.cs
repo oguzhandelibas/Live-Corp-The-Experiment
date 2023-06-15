@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using BreakableBox;
 
 public class Drag : MonoBehaviour, IInteractable
 {
@@ -12,6 +11,7 @@ public class Drag : MonoBehaviour, IInteractable
     {
         if (heldObj == null)
         {
+            if (transform.TryGetComponent(out Destructible destructible)) destructible.CanBreak = true;
             PickupObject(interactObject, parent);
         }
         else
