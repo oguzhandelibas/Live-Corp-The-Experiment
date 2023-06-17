@@ -2310,6 +2310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 8168819846630117044}
   _cameraLook: {fileID: 2251717827224488674}
+  _timeHandler: {fileID: 5437039131904638568}
   ammoIndicatorObject: {fileID: 0}
 --- !u!1 &6355357345863640592
 GameObject:

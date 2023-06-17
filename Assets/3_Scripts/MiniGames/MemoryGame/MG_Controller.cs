@@ -115,6 +115,7 @@ namespace MiniGame.MemoryGame
         {
             Fail = true;
             Outputs[SuccessCount].material = OutputWrongMaterial;
+            Debug.Log("LOST!");
         }
         
         private void SetColor(MeshRenderer mR, Material m, float inTime)

@@ -8,6 +8,7 @@ namespace Player
     {
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
+        [SerializeField] private TimeHandler _timeHandler;
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
@@ -52,12 +53,12 @@ namespace Player
 
         public void SetSlowMotion()
         {
-            
+            _timeHandler.Increase(-0.65f);
         }
 
         public void SetCurrentTime()
         {
-            
+            _timeHandler.Increase(+0.65f);
         }
 
         #endregion

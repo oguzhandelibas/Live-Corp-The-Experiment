@@ -1,4 +1,5 @@
 using MiniGame.MemoryGame;
+using MiniGame.RaidGame;
 using MiniGame.YesYes;
 using UnityEngine;
 
@@ -17,6 +18,10 @@ namespace Player
             {
                 _playerController.Lock(mgController.transform);
                 mgController.StartPathRoutine();
+            }
+            if (other.TryGetComponent(out RaidControl raidControl) && !raidControl.HasStarted)
+            {
+                raidControl.StartSlowMotionGame(_playerController);
             }
         }
     }

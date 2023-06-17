@@ -4,9 +4,10 @@ using System.Collections;
 using InfimaGames.LowPolyShooterPack;
 using Random = UnityEngine.Random;
 
+using MiniGame.RaidGame;
 public class Projectile : MonoBehaviour {
 
-	[Range(5, 100)]
+	[Range(2, 100)]
 	[Tooltip("After how long time should the bullet prefab be destroyed?")]
 	public float destroyAfter;
 	[Tooltip("If enabled the bullet destroys on impact")]
@@ -114,8 +115,10 @@ public class Projectile : MonoBehaviour {
 		if (collision.transform.tag == "Target") 
 		{
 			//Toggle "isHit" on target object
+			/*collision.transform.gameObject.GetComponent
+				<TargetScript>().isHit = true;*/
 			collision.transform.gameObject.GetComponent
-				<TargetScript>().isHit = true;
+				<RaidTarget>().TakeHit();
 			//Destroy bullet object
 			Destroy(gameObject);
 		}

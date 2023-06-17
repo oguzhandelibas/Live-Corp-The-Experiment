@@ -50,7 +50,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Increase Time Scale Value.
         /// </summary>
-        private void Increase(float value = 1.0f)
+        public void Increase(float value = 1.0f)
         {
             //Change.
             Change(Mathf.Clamp01(current + value));
