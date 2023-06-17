@@ -17,11 +17,17 @@ namespace Player
             ammoIndicatorObject.SetActive(false);
         }
 
+        #region GUN
+
         public void SetGun()
         {
             _character.HolsterIssue();
             ammoIndicatorObject.SetActive(true);
         }
+
+        #endregion
+        
+        #region MOVEMENT & ROTATION
 
         public void Lock(Transform target)
         {
@@ -39,6 +45,22 @@ namespace Player
             _cameraLook.isFreeze = false;
         }
         public void UnlockMovement() => _character.isFreeze = false;
+
+        #endregion
+
+        #region SLOW MOTION
+
+        public void SetSlowMotion()
+        {
+            
+        }
+
+        public void SetCurrentTime()
+        {
+            
+        }
+
+        #endregion
     }
 }
 
