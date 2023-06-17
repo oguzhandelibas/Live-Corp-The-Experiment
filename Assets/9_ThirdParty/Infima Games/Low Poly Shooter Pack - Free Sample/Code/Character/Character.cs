@@ -118,6 +118,7 @@ namespace InfimaGames.LowPolyShooterPack
 		private bool holstering;
 
 		private bool isJump;
+		public bool isFreeze;
 		
 		/// <summary>
 		/// Look Axis Values.
@@ -199,6 +200,7 @@ namespace InfimaGames.LowPolyShooterPack
 			layerOverlay = characterAnimator.GetLayerIndex("Layer Overlay");
 			
 			SetHolstered(true);
+			isFreeze = false;
 		}
 
 		protected override void Update()
@@ -207,7 +209,7 @@ namespace InfimaGames.LowPolyShooterPack
 			aiming = holdingButtonAim && CanAim();
 			//Match Run.
 			running = holdingButtonRun && CanRun();
-
+			
 			//Holding the firing button.
 			if (holdingButtonFire)
 			{
@@ -258,6 +260,7 @@ namespace InfimaGames.LowPolyShooterPack
 		
 		public override bool IsTutorialTextVisible() => tutorialTextVisible;
 		public override bool IsJump() => isJump;
+		public override bool IsFreeze() => isFreeze;
 		public override bool HasGun() => !holstered;
 
 		public override Vector2 GetInputMovement() => axisMovement;
@@ -622,7 +625,6 @@ namespace InfimaGames.LowPolyShooterPack
 					break;
 			}
 		}
-		
 		
 		/// <summary>
 		/// Reload.

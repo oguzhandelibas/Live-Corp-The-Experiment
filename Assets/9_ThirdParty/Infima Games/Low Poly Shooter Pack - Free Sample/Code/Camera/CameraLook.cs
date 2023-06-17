@@ -28,7 +28,8 @@ namespace InfimaGames.LowPolyShooterPack
         [Tooltip("The speed at which the look rotation is interpolated.")]
         [SerializeField]
         private float interpolationSpeed = 25.0f;
-        
+
+        public bool isFreeze = false;
         #endregion
         
         #region FIELDS
@@ -71,6 +72,7 @@ namespace InfimaGames.LowPolyShooterPack
         }
         private void LateUpdate()
         {
+            if (isFreeze) return;
             //Frame Input. The Input to add this frame!
             Vector2 frameInput = playerCharacter.IsCursorLocked() ? playerCharacter.GetInputLook() : default;
             //Sensitivity.

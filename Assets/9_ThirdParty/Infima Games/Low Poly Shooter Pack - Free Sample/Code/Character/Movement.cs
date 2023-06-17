@@ -162,7 +162,7 @@ namespace InfimaGames.LowPolyShooterPack
 
         private void Jump()
         {
-            if (playerCharacter.IsJump() && grounded)
+            if (playerCharacter.IsJump() && !playerCharacter.IsFreeze() && grounded)
             {
                 rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
@@ -173,6 +173,12 @@ namespace InfimaGames.LowPolyShooterPack
         {
             #region Calculate Movement Velocity
 
+            if (playerCharacter.IsFreeze())
+            {
+                rigidBody.velocity = Vector3.zero;
+                return;
+            }
+            
             //Get Movement Input!
             Vector2 frameInput = playerCharacter.GetInputMovement();
             //Calculate local-space direction by using the player's input.

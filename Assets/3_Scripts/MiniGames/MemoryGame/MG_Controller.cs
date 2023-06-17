@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using Player;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace MiniGame.MemoryGame
@@ -10,8 +13,8 @@ namespace MiniGame.MemoryGame
     public class MG_Controller : MonoBehaviour
     {
         [Header("Index Lists")]
-        private List<int> PathIndexes = new List<int>();
-        private List<int> SelectedIndexes = new List<int>();
+        public List<int> PathIndexes = new List<int>();
+        public List<int> SelectedIndexes = new List<int>();
         
         [Header("Inputs & Outputs")]
         [SerializeField] private MeshRenderer[] Inputs;
@@ -20,27 +23,40 @@ namespace MiniGame.MemoryGame
         [Header("Input Materials")]
         [SerializeField] private Material InputObjectMaterial;
         [SerializeField] private Material InputIndicatorMaterial;
+        [SerializeField] private Material InputSelectedObjectMaterial;
         
         
         [Header("Output Materials")]
         [SerializeField] private Material OutputObjectMaterial;
         [SerializeField] private Material OutputCorrectMaterial;
         [SerializeField] private Material OutputWrongMaterial;
-        
-        [Header("Local Variables")]
+
+        [Header("Local Variables")] 
+        private int pathLength = 1;
         private int SuccessCount;
         private bool Fail = false;
         public bool CanInteract { get; set; }
-        
-        public void StartPathRoutine(int counter)
+        public bool HasTrigger { get; set; }
+
+        private void Start()
         {
-            StartCoroutine(ShowPathRoutine(counter));
+            SuccessCount = 0;
+        }
+
+        public void StartPathRoutine()
+        {
+            HasTrigger = true;
+            StartCoroutine(ShowPathRoutine(1.0f));
         }
         
         public void Interact(int index)
         {
             if(SelectedIndexes.Count > PathIndexes.Count) return;
-            
+            MeshRenderer meshRenderer = Inputs[index];
+            meshRenderer.material.DOColor(InputSelectedObjectMaterial.color, 0.1f).OnComplete(delegate
+            {
+                SetColor(meshRenderer, InputObjectMaterial, 0.1f);
+            });;
             SelectedIndexes.Add(index);
             if (SelectedIndexes.Count == PathIndexes.Count)
             {
@@ -49,20 +65,24 @@ namespace MiniGame.MemoryGame
                     CorrectAnswer();
                 else 
                     MadeMistake();
+                PathIndexes.Clear();
+                SelectedIndexes.Clear();
             }
         }
         
-        IEnumerator ShowPathRoutine(int pathLength)
+        IEnumerator ShowPathRoutine(float waitTime = 0.0f)
         {
+            yield return new WaitForSeconds(waitTime);
             CanInteract = false;
+            pathLength++;
             for (int i = 0; i < pathLength; i++)
             {
                 MeshRenderer meshRenderer = GetRandomInputMeshRenderer();
-                meshRenderer.material.DOColor(InputIndicatorMaterial.color, 0.3f);
-                yield return new WaitForSeconds(1f);
+                meshRenderer.material.DOColor(InputIndicatorMaterial.color, 0.15f);
+                yield return new WaitForSeconds(0.5f);
                 meshRenderer.material.DOColor(InputObjectMaterial.color, 0.15f);
+                yield return new WaitForSeconds(0.5f);
             }
-
             CanInteract = true;
         }
 
@@ -75,13 +95,31 @@ namespace MiniGame.MemoryGame
 
         private void CorrectAnswer()
         {
+            if(SuccessCount > 3) return;
             Outputs[SuccessCount].material = OutputCorrectMaterial;
+            
+            SuccessCount++;
+            
+            if (SuccessCount < 3)
+            {
+                StartCoroutine(ShowPathRoutine(0.5f));
+            }
+            else
+            {
+                PlayerController.Instance.UnlockMovement();
+                Debug.Log("WIN!");
+            }
         }
 
         private void MadeMistake()
         {
             Fail = true;
             Outputs[SuccessCount].material = OutputWrongMaterial;
+        }
+        
+        private void SetColor(MeshRenderer mR, Material m, float inTime)
+        {
+            mR.material.DOColor(m.color, inTime);
         }
     }
 }

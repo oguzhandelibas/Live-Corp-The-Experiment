@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -910,6 +910,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079958770}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1150136247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150136248}
+  m_Layer: 0
+  m_Name: PlayerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1150136248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150136247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.6, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995505348}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329861254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1385,7 @@ Transform:
   - {fileID: 1529371294}
   - {fileID: 340608987}
   m_Father: {fileID: 1995505348}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529371293
 GameObject:
@@ -1942,7 +1973,7 @@ Transform:
   - {fileID: 1079958771}
   - {fileID: 1348676688}
   m_Father: {fileID: 1995505348}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1900048965
 BoxCollider:
@@ -2093,6 +2124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995505348}
   - component: {fileID: 1995505349}
+  - component: {fileID: 1995505350}
   m_Layer: 0
   m_Name: MemoryGame
   m_TagString: Untagged
@@ -2107,16 +2139,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995505347}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3, y: 1.5, z: 10}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.6, y: 1.5, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1150136248}
   - {fileID: 1405194409}
   - {fileID: 1900048964}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1995505349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,6 +2162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26124366604d81d4e958bbbeebab3d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PathIndexes: 
+  SelectedIndexes: 
   Inputs:
   - {fileID: 885964567}
   - {fileID: 232410270}
@@ -2146,11 +2181,26 @@ MonoBehaviour:
   InputObjectMaterial: {fileID: 2100000, guid: 835832d7c8d295647812ff3f7ebcdf84, type: 2}
   InputIndicatorMaterial: {fileID: 2100000, guid: 324f7c18ef628734b8889853d7e48ca0,
     type: 2}
+  InputSelectedObjectMaterial: {fileID: 2100000, guid: 240800d1f617512488ad14ac8701cb6b,
+    type: 2}
   OutputObjectMaterial: {fileID: 2100000, guid: ca88a28d93db1be4190309a4f4e24ba5,
     type: 2}
   OutputCorrectMaterial: {fileID: 2100000, guid: 40266e6498ee5934d923e6b7593079c3,
     type: 2}
   OutputWrongMaterial: {fileID: 2100000, guid: 2114780d873390047bde9d954e9265ae, type: 2}
+--- !u!65 &1995505350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995505347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8529229, z: 1.1761246}
+  m_Center: {x: 0, y: -0.42646146, z: -1.0998936}
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1
