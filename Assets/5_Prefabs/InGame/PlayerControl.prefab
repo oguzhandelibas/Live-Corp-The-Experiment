@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookPoint: {fileID: 7694591170228352559}
   Crosshair: {fileID: 0}
-  InteractRange: 200
+  InteractRange: 5
 --- !u!114 &187054356507999901
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System;
+using MiniGame.DoorGame;
 using MiniGame.YesYes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,14 +15,16 @@ public class InteractionToItem : MonoBehaviour
     private IInteractable Interactable;
     private void Update()
     {
-        r = new Ray(lookPoint.transform.position, lookPoint.transform.forward);
+        r = new Ray(lookPoint.transform.position, lookPoint.transform.forward * InteractRange);
+        Gizmos.color = Color.red;
+        Debug.DrawRay(lookPoint.transform.position, lookPoint.transform.forward * InteractRange);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out ChoicePlatform choicePlatform))
             {
                 if(!choicePlatform.yes) choicePlatform.Change();
             }
-
+            
             if (Interactable==null && hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 Interactable = interactObj;
@@ -32,22 +35,22 @@ public class InteractionToItem : MonoBehaviour
                     Crosshair.enabled = !Crosshair.enabled;
                 }
             }
+            else if(hitInfo.collider.gameObject.TryGetComponent(out WoodBreak woodBreak)) Crosshair.color = Color.red;
             else
             {
                 Crosshair.color = Color.white;
             }
-
-            if (Interactable != null)
+        }
+        if (Interactable != null)
+        {
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    Interactable.InteractEnd();
-                    Crosshair.enabled = true;
-                }
-                if (!Input.GetKey(KeyCode.E))
-                {
-                    Interactable = null;
-                }
+                Interactable.InteractEnd();
+                Crosshair.enabled = true;
+            }
+            else
+            {
+                Interactable = null;
             }
         }
     }

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using InfimaGames.LowPolyShooterPack;
+using MiniGame.DoorGame;
 using Random = UnityEngine.Random;
 
 using MiniGame.RaidGame;
@@ -141,6 +142,11 @@ public class Projectile : MonoBehaviour {
 				<GasTankScript> ().isHit = true;
 			//Destroy bullet object
 			Destroy(gameObject);
+		}
+
+		if (collision.transform.TryGetComponent(out WoodBreak woodBreak))
+		{
+			woodBreak.Break();
 		}
 	}
 
