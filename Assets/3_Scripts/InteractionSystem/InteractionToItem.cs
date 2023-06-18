@@ -32,7 +32,6 @@ public class InteractionToItem : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint);
-                    Crosshair.enabled = !Crosshair.enabled;
                 }
             }
             else if(hitInfo.collider.gameObject.TryGetComponent(out WoodBreak woodBreak)) Crosshair.color = Color.red;
@@ -46,7 +45,6 @@ public class InteractionToItem : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 Interactable.InteractEnd();
-                Crosshair.enabled = true;
             }
             else
             {

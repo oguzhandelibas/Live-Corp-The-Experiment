@@ -38,7 +38,7 @@ namespace MiniGame.DoorGame
         private void OpenDoor()
         {
             _collider.enabled = false;
-            door.DORotate(new Vector3(0, -90, 0), 1);
+            door.DOLocalRotate(new Vector3(0, -90, 0), 1);
         }
 
         public void InteractStart(GameObject interactObject, Transform parent)
