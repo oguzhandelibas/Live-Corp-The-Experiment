@@ -13,7 +13,7 @@ Fatma Nur Akdemir : Developer
  
 Ürün İsmi
 --Live Corp: The Experiment --
-Product Backlog URL
+Product Backlog URL : https://trello.com/b/ryeZV0tz/u68-development-workflow
 Unity Product Backlog Board
  
 Ürün Açıklaması
@@ -31,18 +31,22 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
 Sprint 1
 Sprint içinde tamamlanması tahmin edilen puan: 250 Puan
 Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 500 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 250 puan ile başlaması gerektiğine karar verildi.
-Daily Scrum: Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı tüm günlerinde de yazılı şekilde gelişmeler aktarılmıştır. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats
-Ürün Durumu:
- 
-Sprint board update: Sprint board screenshotları:
+Daily Scrum: Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı tüm günlerinde de yazılı şekilde gelişmeler aktarılmıştır. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats [Daily_scrum_chats.docx](https://github.com/oguzhandelibas/u68/files/11786346/Daily_scrum_chats.docx)
 
- 
+Ürün Durumu:
+ ![image](https://github.com/oguzhandelibas/u68/assets/130167514/f03c2a11-7508-4e18-ad8f-b1c7fda3070a)
+![image](https://github.com/oguzhandelibas/u68/assets/130167514/aebddcd8-ddb6-4a7b-a2a2-0097be8d2649)
+
+Sprint board update: Sprint board screenshotları:
+![u68 backlog](https://github.com/oguzhandelibas/u68/assets/130167514/6860870f-673d-4af9-b385-25fcb6563f56)
+
 Sprint Review: Alınan kararlar: Oyunun genel sürecini oluşturan minigameler tamamlanmış, karakter kontrol ve UI tasarımının genel çerçevesi oluşturulmuştur ve eksiklikler değerlendirilmiştir.
-Sprint Review katılımcıları: Oğuzhan Delibaş : Product Owner / Developer
-Aslı Rahime Erim : Scrum Master /Developer
-Yağız Efe Atasever : Developer
-Seyfullah Niyazi Tokmak : Developer
-Fatma Nur Akdemir : Developer
+Sprint Review katılımcıları: Oğuzhan Delibaş 
+Aslı Rahime Erim 
+Yağız Efe Atasever 
+Seyfullah Niyazi Tokmak 
+Fatma Nur Akdemir 
+
 Sprint Retrospective:
 Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğine vurgu yapılmıştır.
