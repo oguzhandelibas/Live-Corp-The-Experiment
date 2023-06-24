@@ -21,6 +21,7 @@ public class enemy : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject projectile;
+    public Transform shootingPoint;
 
     //States
     public float sightRange, attackRange;
@@ -28,7 +29,7 @@ public class enemy : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("MainCamera").transform;
+        player = GameObject.Find("Player/MainCamera/enemyTrigger").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -83,7 +84,7 @@ public class enemy : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(projectile, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
             //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             ///End of attack code
