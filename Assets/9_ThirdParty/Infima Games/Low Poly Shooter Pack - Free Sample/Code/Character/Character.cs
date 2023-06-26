@@ -3,7 +3,6 @@
 using System;
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine.InputSystem;
 
 namespace InfimaGames.LowPolyShooterPack
