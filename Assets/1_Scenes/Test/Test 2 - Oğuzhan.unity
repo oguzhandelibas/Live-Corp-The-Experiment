@@ -1540,6 +1540,7 @@ GameObject:
   - component: {fileID: 1089756692}
   - component: {fileID: 1089756691}
   - component: {fileID: 1089756693}
+  - component: {fileID: 1089756694}
   m_Layer: 0
   m_Name: PlayfabPanel
   m_TagString: Untagged
@@ -1589,6 +1590,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playfabManager: {fileID: 1089756691}
+--- !u!114 &1089756694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089756690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8d94ed65b187e43a6708e0fc324f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeData: {fileID: 11400000, guid: d03f7ab5873811444a46148c2dac4467, type: 2}
+  ElapsedTime: 0
 --- !u!1 &1246689425
 GameObject:
   m_ObjectHideFlags: 0

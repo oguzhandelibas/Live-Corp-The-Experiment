@@ -6,7 +6,7 @@ using PlayFab.ClientModels;
 
 namespace Leadboard
 {
-    public class PlayfabManager : MonoBehaviour
+    public class PlayfabManager : AbstractSingleton<PlayfabManager>
     {
         [SerializeField] private LeadboardController _leadboardController;
         private void Start()
@@ -57,7 +57,7 @@ namespace Leadboard
     
         public void GetLeaderboard()
         {
-            SendLeaderboard(15);
+            SendLeaderboard(TimeControl.Instance.GetBestTime());
             var request = new GetLeaderboardRequest
             {
                 StatisticName = "UserScores",
@@ -70,7 +70,6 @@ namespace Leadboard
     
         private void OnLeaderboardGet(GetLeaderboardResult result)
         {
-            Debug.Log(result.Leaderboard.Count);
             for (var i = 0; i < result.Leaderboard.Count; i++)
             {//DisplayName
                 _leadboardController.SetUsersInformation(
