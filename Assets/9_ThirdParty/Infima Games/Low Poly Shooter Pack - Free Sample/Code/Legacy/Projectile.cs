@@ -6,8 +6,6 @@ using MiniGame.DoorGame;
 using Random = UnityEngine.Random;
 
 using MiniGame.RaidGame;
-using UnityEditor;
-
 public class Projectile : MonoBehaviour {
 
 	[Range(2, 100)]
@@ -150,22 +148,7 @@ public class Projectile : MonoBehaviour {
 		{
 			woodBreak.Break();
 		}
-
-        if (collision.gameObject.CompareTag("enemy"))
-        {
-            //Debug.Log("vurdun");
-            BodyPart bodyPart = collision.gameObject.GetComponent<BodyPart>();
-
-            if (bodyPart != null && bodyPart.npcHealth != null)
-            {
-                // Call TakeDamage on the NPCHealth
-                bodyPart.npcHealth.TakeDamage(50);
-            }
-
-            //Destroy bullet object
-            Destroy(gameObject);
-        }
-    }
+	}
 
 	private IEnumerator DestroyTimer () 
 	{
