@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationControl: {fileID: 2353042469102049799}
+  wayPoints: []
   player: {fileID: 0}
 --- !u!114 &2353042469102049799
 MonoBehaviour:
@@ -74,7 +75,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.4
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

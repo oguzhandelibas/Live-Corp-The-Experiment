@@ -12,7 +12,6 @@ namespace NPC
             PATROL,
             PURSUE,
             ATTACK,
-            SLEEP
         };
 
         public enum EVENT
@@ -128,7 +127,6 @@ namespace NPC
 
         public override void Exit()
         {
-            //animationControl.ResetTrigger("isIdle");
             base.Exit();
         }
     }
@@ -184,7 +182,6 @@ namespace NPC
 
         public override void Exit()
         {
-            //animationControl.ResetTrigger("isIdle");
             base.Exit();
         }
     }
@@ -225,7 +222,6 @@ namespace NPC
 
         public override void Exit()
         {
-            //animationControl.ResetTrigger("isRunning");
             base.Exit();
         }
     }
