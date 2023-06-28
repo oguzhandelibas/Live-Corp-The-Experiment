@@ -39,7 +39,9 @@ namespace NPC
 
         public void Death()
         {
+            GetComponent<CapsuleCollider>().enabled = false;
             alive = false;
+            agent.enabled = false;
             _ragdollControl.ToggleRagdoll(animator, true);
         }
     }

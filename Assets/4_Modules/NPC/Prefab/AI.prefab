@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8393594628719457003}
   - component: {fileID: 8393594628719457002}
   - component: {fileID: 8393594628719457005}
+  - component: {fileID: 5583698925469326638}
   - component: {fileID: 8393594628719457004}
   - component: {fileID: 9158322631542309858}
-  - component: {fileID: 5583698925469326638}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -67,6 +67,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2672495495526801634}
   characterType: 1
+--- !u!114 &5583698925469326638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393594628719457001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19cb0135d74ce834a890a5c791fb89b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &8393594628719457004
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -103,18 +115,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &5583698925469326638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8393594628719457001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19cb0135d74ce834a890a5c791fb89b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8393594627108920691
 PrefabInstance:
   m_ObjectHideFlags: 0
