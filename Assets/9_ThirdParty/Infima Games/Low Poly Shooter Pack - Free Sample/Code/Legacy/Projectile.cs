@@ -6,6 +6,7 @@ using MiniGame.DoorGame;
 using Random = UnityEngine.Random;
 
 using MiniGame.RaidGame;
+using NPC;
 using UnityEditor;
 
 public class Projectile : MonoBehaviour {
@@ -149,6 +150,11 @@ public class Projectile : MonoBehaviour {
 		if (collision.transform.TryGetComponent(out WoodBreak woodBreak))
 		{
 			woodBreak.Break();
+		}
+
+		if (collision.transform.TryGetComponent(out IHealth iHealth))
+		{
+			iHealth.TakeDamage();
 		}
 
         if (collision.gameObject.CompareTag("enemy"))
