@@ -1741,7 +1741,7 @@ GameObject:
   - component: {fileID: 5884218047685609}
   - component: {fileID: 187054356507999901}
   - component: {fileID: 4482951217021407920}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: PlayerControl
   m_TagString: Player
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1792,9 +1792,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 1.8
+  m_Height: 2.1765783
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.188289, z: 0}
 --- !u!82 &2815613428962402521
 AudioSource:
   m_ObjectHideFlags: 0
