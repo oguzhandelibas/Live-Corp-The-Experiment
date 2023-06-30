@@ -154,7 +154,14 @@ public class Projectile : MonoBehaviour {
 
 		if (collision.transform.TryGetComponent(out IHealth iHealth))
 		{
-			iHealth.TakeDamage();
+			Vector3 collisionPoint = Vector3.zero;
+			if (collision.contacts.Length > 0)
+			{
+				ContactPoint contactPoint = collision.contacts[0];
+				collisionPoint = contactPoint.point;
+			}
+			iHealth.TakeDamage(collisionPoint);
+			
 		}
 
         if (collision.gameObject.CompareTag("enemy"))
