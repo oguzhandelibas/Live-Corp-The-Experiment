@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5583698925469326638}
   - component: {fileID: 8393594628719457004}
   - component: {fileID: 9158322631542309858}
+  - component: {fileID: 7168929524685858173}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ragdollControl: {fileID: 5583698925469326638}
   _animationControl: {fileID: 8393594628719457005}
+  _effectControl: {fileID: 7168929524685858173}
   wayPoints: []
   player: {fileID: 0}
 --- !u!114 &8393594628719457005
@@ -89,7 +91,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -111,10 +113,24 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.35
+  m_Radius: 0.4
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7168929524685858173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393594628719457001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1048e121805c31d43ba256c155d4294f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodEffect: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  hitEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
 --- !u!1001 &8393594627108920691
 PrefabInstance:
   m_ObjectHideFlags: 0

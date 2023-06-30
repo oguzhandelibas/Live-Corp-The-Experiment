@@ -167,7 +167,6 @@ namespace NPC
                 nextState = new Pursue(npc, agent, animationControl, player, wayPoints);
                 stage = EVENT.EXIT;
             }
-            Debug.Log("PATROL");
         }
 
         public override void Exit()
@@ -241,7 +240,6 @@ namespace NPC
 
         public override void Update()
         {
-            Debug.Log("ATTACK " + agent.isStopped);
             Vector3 direction = player.position - npc.transform.position;
             float angle = Vector3.Angle(direction, npc.transform.forward);
             direction.y = 0;

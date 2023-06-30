@@ -6,7 +6,7 @@ namespace NPC
 {
     public interface IHealth
     {
-        void TakeDamage();
+        void TakeDamage(Vector3 hitPos);
         void Death();
     }
 

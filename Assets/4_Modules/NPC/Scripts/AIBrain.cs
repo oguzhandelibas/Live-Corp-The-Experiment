@@ -8,6 +8,7 @@ namespace NPC
     {
         [SerializeField] private RagdollControl _ragdollControl;
         [SerializeField] private AnimationControl _animationControl;
+        [SerializeField] private EffectControl _effectControl;
         [SerializeField] private Transform[] wayPoints;
         [SerializeField] private  Transform player;
         private int health = 100;
@@ -30,10 +31,11 @@ namespace NPC
             if(alive) currentState = currentState.Process();
         }
 
-        public void TakeDamage()
+        public void TakeDamage(Vector3 hitPos)
         {
             health -= 50;
             //create effect
+            _effectControl.CreateBloodEffect(transform, hitPos);
             if (health <= 0) Death();
         }
 
