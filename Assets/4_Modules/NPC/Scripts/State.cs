@@ -182,7 +182,6 @@ namespace NPC
         {
             name = STATE.PURSUE;
             agent.speed = 5;
-            Debug.Log("Pursue Enter");
             agent.isStopped = false;
         }
 
@@ -208,7 +207,6 @@ namespace NPC
                     stage = EVENT.EXIT;
                 }
             }
-            Debug.Log("PURSUE");
         }
 
         public override void Exit()
