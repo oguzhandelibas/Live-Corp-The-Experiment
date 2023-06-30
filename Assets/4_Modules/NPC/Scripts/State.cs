@@ -30,9 +30,9 @@ namespace NPC
         protected State nextState;
         protected NavMeshAgent agent;
 
-        float visDist = 10.0f;
-        float visAngle = 50.0f;
-        float shootDist = 7.0f;
+        float visDist = 20.0f;
+        float visAngle = 90.0f;
+        float shootDist = 5.0f;
 
         public State(GameObject _npc, NavMeshAgent _agent, AnimationControl _animationControl, Transform _player, Transform[] _wayPoints)
         {
@@ -76,24 +76,13 @@ namespace NPC
         {
             Vector3 direction = player.position - npc.transform.position;
             float angle = Vector3.Angle(direction, npc.transform.forward);
-
-            if (direction.magnitude < visDist && angle < visAngle)
-            {
-                return true;
-            }
-
-            return false;
+            return (direction.magnitude < visDist && angle < visAngle);
         }
 
         public bool CanAttackPlayer()
         {
             Vector3 direction = player.position - npc.transform.position;
-            if (direction.magnitude < shootDist)
-            {
-                return true;
-            }
-
-            return false;
+            return direction.magnitude < shootDist;
         }
     }
 
@@ -156,13 +145,13 @@ namespace NPC
                     lastDist = distance;
                 }
             }
-
             animationControl.PlayAnimation(AnimType.WALK);
             base.Enter();
         }
 
         public override void Update()
         {
+            
             if (agent.remainingDistance < 1)
             {
                 if (currentIndex >= wayPoints.Length - 1)
@@ -178,6 +167,7 @@ namespace NPC
                 nextState = new Pursue(npc, agent, animationControl, player, wayPoints);
                 stage = EVENT.EXIT;
             }
+            Debug.Log("PATROL");
         }
 
         public override void Exit()
@@ -193,6 +183,7 @@ namespace NPC
         {
             name = STATE.PURSUE;
             agent.speed = 5;
+            Debug.Log("Pursue Enter");
             agent.isStopped = false;
         }
 
@@ -218,6 +209,7 @@ namespace NPC
                     stage = EVENT.EXIT;
                 }
             }
+            Debug.Log("PURSUE");
         }
 
         public override void Exit()
@@ -242,12 +234,14 @@ namespace NPC
         {
             animationControl.PlayAnimation(AnimType.SHOOT);
             agent.isStopped = true;
+            agent.velocity = Vector3.zero;
             //shoot.Play(14000);
             base.Enter();
         }
 
         public override void Update()
         {
+            Debug.Log("ATTACK " + agent.isStopped);
             Vector3 direction = player.position - npc.transform.position;
             float angle = Vector3.Angle(direction, npc.transform.forward);
             direction.y = 0;
@@ -260,6 +254,7 @@ namespace NPC
                 nextState = new Idle(npc, agent, animationControl, player, wayPoints);
                 stage = EVENT.EXIT;
             }
+            
         }
 
         public override void Exit()

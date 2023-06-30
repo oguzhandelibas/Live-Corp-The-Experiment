@@ -14,11 +14,11 @@ namespace NPC
             animator.SetFloat("Blend", (float)characterType);
         }
 
-        public void PlayAnimation(AnimType animName)
+        public void PlayAnimation(AnimType animName, bool isTrigger = false)
         {
             if (animNowSelect == animName)
                 return;
-
+            
             foreach (AnimType item in (AnimType[])Enum.GetValues(typeof(AnimType)))
                 animator.SetBool(item.ToString(), item == animName);
 

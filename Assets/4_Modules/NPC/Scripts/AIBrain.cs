@@ -33,7 +33,7 @@ namespace NPC
         public void TakeDamage()
         {
             health -= 50;
-            _animationControl.PlayAnimation(AnimType.HIT);
+            //create effect
             if (health <= 0) Death();
         }
 

@@ -15,6 +15,5 @@ namespace NPC
         WALK,
         RUN,
         SHOOT,
-        HIT
     }
 }
