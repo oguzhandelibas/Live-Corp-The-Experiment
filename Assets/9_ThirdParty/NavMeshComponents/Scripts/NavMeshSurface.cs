@@ -91,6 +91,7 @@ namespace UnityEngine.AI
         {
             Register(this);
             AddData();
+            BuildNavMesh();
         }
 
         void OnDisable()

@@ -172,6 +172,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 8393594628719457002, guid: 299066ecd981a6043b9b9b7d0054ef85,
+        type: 3}
+      propertyPath: wayPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393594628719457002, guid: 299066ecd981a6043b9b9b7d0054ef85,
+        type: 3}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 2353042470290938270}
+    - target: {fileID: 8393594628719457002, guid: 299066ecd981a6043b9b9b7d0054ef85,
+        type: 3}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 2353042469833281978}
+    - target: {fileID: 8393594628719457002, guid: 299066ecd981a6043b9b9b7d0054ef85,
+        type: 3}
+      propertyPath: wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 2353042470135740001}
+    - target: {fileID: 8393594628719457002, guid: 299066ecd981a6043b9b9b7d0054ef85,
+        type: 3}
+      propertyPath: wayPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2353042469710574933}
     - target: {fileID: 8393594628719457003, guid: 299066ecd981a6043b9b9b7d0054ef85,
         type: 3}
       propertyPath: m_RootOrder
