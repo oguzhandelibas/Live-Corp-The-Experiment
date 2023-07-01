@@ -6,8 +6,11 @@ TagManager:
   tags:
   - CinemachineTarget
   - Target
+<<<<<<< HEAD
   - enemy
   - Checkpoint
+=======
+>>>>>>> Oğuzhan
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - Water
   - UI
   - NotCollision
-  - Player
-  - ground
-  - enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 
