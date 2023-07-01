@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour {
 		//Start destroy timer
 		StartCoroutine (DestroyAfter ());
 	}
+	
 
 	//If the bullet collides with anything
 	private void OnCollisionEnter (Collision collision)
@@ -164,7 +165,7 @@ public class Projectile : MonoBehaviour {
 			
 		}
 
-        if (collision.gameObject.CompareTag("enemy"))
+        /*if (collision.gameObject.CompareTag("enemy"))
         {
             //Debug.Log("vurdun");
             BodyPart bodyPart = collision.gameObject.GetComponent<BodyPart>();
@@ -177,7 +178,7 @@ public class Projectile : MonoBehaviour {
 
             //Destroy bullet object
             Destroy(gameObject);
-        }
+        }*/
     }
 
 	private IEnumerator DestroyTimer () 

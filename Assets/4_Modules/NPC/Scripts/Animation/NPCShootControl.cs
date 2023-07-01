@@ -26,7 +26,7 @@ namespace NPC
                 (
                     new Ray(muzzleSocket.position, muzzleSocket.forward), 
                     out RaycastHit hit, 
-                    1000,
+                    5000,
                     targetLayer))
             {
                 rotation = Quaternion.LookRotation(hit.point - muzzleSocket.position);
