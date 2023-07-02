@@ -37,7 +37,7 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
  
 ## Sprint 1
 #### Sprint içinde tamamlanması tahmin edilen puan: 
-240 Puan
+* 240 Puan
 #### Puan tamamlama mantığı: 
 Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 240 puan ile başlaması gerektiğine karar verildi.
 #### Daily Scrum: 
@@ -80,7 +80,7 @@ Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğin
 ## Sprint 2
 
 ### Sprint içinde tamamlanması tahmin edilen puan: 
-210 Puan
+* 210 Puan
 ### Puan Tamamlama Mantığı: 
 Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 240 puanlık geliştirme yapılmış olup 2. Sprintte 210 puanlık kısmın tamamlanması kararlaştırılmıştır.
 
@@ -107,11 +107,11 @@ https://trello.com/b/ryeZV0tz/u68-development-workflow
 Alınan kararlar: Oyunun genel sürecini oluşturan mekanikler ve modüller tamamlanmış, level tasarımının genel çerçevesi oluşturulmuştur ve eksiklikler değerlendirilmiştir. Beklenen hedefler tutturularak başarılı bir  sprint geçirilmiştir. 
 
 #### Sprint Review Katılımcıları: 
--Oğuzhan Delibaş 
--Aslı Rahime Erim 
--Yağız Efe Atasever
--Seyfullah Niyazi Tokmak 
--Fatma Nur Akdemir 
+* Oğuzhan Delibaş 
+* Aslı Rahime Erim 
+* Yağız Efe Atasever
+* Seyfullah Niyazi Tokmak 
+* Fatma Nur Akdemir 
 
 ### Sprint Retrospective:
 Beklenen hedefler tutturularak başarılı bir sprint geçirilmiştir. Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğine vurgu yapılmıştır. İlk sprintten gerekli iş akış verimi sağlanmıştır.
