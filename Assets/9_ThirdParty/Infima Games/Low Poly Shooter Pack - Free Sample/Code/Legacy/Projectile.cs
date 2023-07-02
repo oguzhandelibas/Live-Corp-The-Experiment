@@ -6,6 +6,7 @@ using MiniGame.DoorGame;
 using Random = UnityEngine.Random;
 
 using MiniGame.RaidGame;
+using Player;
 using NPC;
 using UnityEditor;
 
@@ -45,7 +46,9 @@ public class Projectile : MonoBehaviour {
 		//Ignore collisions with other projectiles.
 		if (collision.gameObject.GetComponent<Projectile>() != null)
 			return;
-		
+
+		#region Non-Use Collision Detection
+/*
 		// //Ignore collision if bullet collides with "Player" tag
 		// if (collision.gameObject.CompareTag("Player")) 
 		// {
@@ -60,24 +63,14 @@ public class Projectile : MonoBehaviour {
 		// 	return;
 		// }
 		//
-		//If destroy on impact is false, start 
-		//coroutine with random destroy timer
-		if (!destroyOnImpact) 
-		{
-			StartCoroutine (DestroyTimer ());
-		}
-		//Otherwise, destroy bullet on impact
-		else 
-		{
-			Destroy (gameObject);
-		}
+		
 
 		//If bullet collides with "Blood" tag
 		if (collision.transform.tag == "Blood") 
 		{
 			//Instantiate random impact prefab from array
 			Instantiate (bloodImpactPrefabs [Random.Range 
-				(0, bloodImpactPrefabs.Length)], transform.position, 
+					(0, bloodImpactPrefabs.Length)], transform.position, 
 				Quaternion.LookRotation (collision.contacts [0].normal));
 			//Destroy bullet object
 			Destroy(gameObject);
@@ -88,7 +81,7 @@ public class Projectile : MonoBehaviour {
 		{
 			//Instantiate random impact prefab from array
 			Instantiate (metalImpactPrefabs [Random.Range 
-				(0, bloodImpactPrefabs.Length)], transform.position, 
+					(0, bloodImpactPrefabs.Length)], transform.position, 
 				Quaternion.LookRotation (collision.contacts [0].normal));
 			//Destroy bullet object
 			Destroy(gameObject);
@@ -99,7 +92,7 @@ public class Projectile : MonoBehaviour {
 		{
 			//Instantiate random impact prefab from array
 			Instantiate (dirtImpactPrefabs [Random.Range 
-				(0, bloodImpactPrefabs.Length)], transform.position, 
+					(0, bloodImpactPrefabs.Length)], transform.position, 
 				Quaternion.LookRotation (collision.contacts [0].normal));
 			//Destroy bullet object
 			Destroy(gameObject);
@@ -110,7 +103,7 @@ public class Projectile : MonoBehaviour {
 		{
 			//Instantiate random impact prefab from array
 			Instantiate (concreteImpactPrefabs [Random.Range 
-				(0, bloodImpactPrefabs.Length)], transform.position, 
+					(0, bloodImpactPrefabs.Length)], transform.position, 
 				Quaternion.LookRotation (collision.contacts [0].normal));
 			//Destroy bullet object
 			Destroy(gameObject);
@@ -121,7 +114,7 @@ public class Projectile : MonoBehaviour {
 		{
 			//Toggle "isHit" on target object
 			/*collision.transform.gameObject.GetComponent
-				<TargetScript>().isHit = true;*/
+				<TargetScript>().isHit = true;
 			collision.transform.gameObject.GetComponent
 				<RaidTarget>().TakeHit();
 			//Destroy bullet object
@@ -146,8 +139,21 @@ public class Projectile : MonoBehaviour {
 				<GasTankScript> ().isHit = true;
 			//Destroy bullet object
 			Destroy(gameObject);
+		}*/
+		#endregion
+		
+		//If destroy on impact is false, start 
+		//coroutine with random destroy timer
+		if (!destroyOnImpact) 
+		{
+			StartCoroutine (DestroyTimer ());
 		}
-
+		//Otherwise, destroy bullet on impact
+		else 
+		{
+			Destroy (gameObject);
+		}
+		
 		if (collision.transform.TryGetComponent(out WoodBreak woodBreak))
 		{
 			woodBreak.Break();

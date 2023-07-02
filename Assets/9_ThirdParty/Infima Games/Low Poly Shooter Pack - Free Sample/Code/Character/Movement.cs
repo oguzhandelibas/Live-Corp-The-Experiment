@@ -6,7 +6,7 @@ using UnityEngine.XR;
 
 namespace InfimaGames.LowPolyShooterPack
 {
-    [RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
+    [RequireComponent(typeof(Rigidbody), typeof(Collider))]
     public class Movement : MovementBehaviour
     {
         #region FIELDS SERIALIZED

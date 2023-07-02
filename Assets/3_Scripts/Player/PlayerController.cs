@@ -1,10 +1,11 @@
 using DG.Tweening;
 using InfimaGames.LowPolyShooterPack;
+using NPC;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerController : AbstractSingleton<PlayerController>
+    public class PlayerController : AbstractSingleton<PlayerController>, IHealth
     {
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
@@ -62,6 +63,16 @@ namespace Player
         }
 
         #endregion
+
+        public void TakeDamage(Vector3 hitPos)
+        {
+            Debug.Log("Taked Damege");
+        }
+
+        public void Death()
+        {
+            Debug.Log("Died");
+        }
     }
 }
 

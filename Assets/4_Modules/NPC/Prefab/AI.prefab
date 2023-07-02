@@ -55,6 +55,37 @@ MonoBehaviour:
     type: 3}
   flashLightDuration: 0
   flashLightOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &390862637451541022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846863198850316922}
+  m_Layer: 0
+  m_Name: MuzzlePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1846863198850316922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390862637451541022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: 1.3624, z: 0.852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8393594628719457003}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2381029824131758536
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +923,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8356060406712187544}
+  - {fileID: 1846863198850316922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1263,7 +1295,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000027474016, y: -2.2728012e-16, z: 0.2517584}
+  m_ConnectedAnchor: {x: -0.00000017648563, y: -2.2728017e-16, z: 0.2517584}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1795,7 +1827,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000014901161, y: -7.193496e-17, z: 0.39749086}
+  m_ConnectedAnchor: {x: 0.000000014901161, y: -7.193499e-17, z: 0.39749098}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1934,13 +1966,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e627371ab3b4449bc1749db3b35b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muzzleSocket: {fileID: 5914776055885260167}
+  muzzleSocket: {fileID: 1846863198850316922}
   prefabProjectile: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
-  projectileImpulse: 250
+  projectileImpulse: 100
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
+  player: {fileID: 0}
 --- !u!1 &8855511224363660758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8171480954102454107, guid: d26725f11a285fe41bb916de053ab1d8,
@@ -1989,7 +2022,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000085216016, y: -2.6956678e-16, z: 0.25175834}
+  m_ConnectedAnchor: {x: -0.00000021932647, y: -2.6956675e-16, z: 0.25175834}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:

@@ -30,9 +30,9 @@ namespace NPC
         protected State nextState;
         protected NavMeshAgent agent;
 
-        float visDist = 20.0f;
-        float visAngle = 90.0f;
-        float shootDist = 5.0f;
+        float visDist = 15.0f;
+        float visAngle = 75.0f;
+        float shootDist = 10.0f;
 
         public State(GameObject _npc, NavMeshAgent _agent, AnimationControl _animationControl, Transform _player, Transform[] _wayPoints)
         {
