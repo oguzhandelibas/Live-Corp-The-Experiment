@@ -2,6 +2,7 @@ using DG.Tweening;
 using InfimaGames.LowPolyShooterPack;
 using NPC;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Player
 {
@@ -10,6 +11,8 @@ namespace Player
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
         [SerializeField] private TimeHandler _timeHandler;
+        [SerializeField] private Volume volumeObject;
+        [SerializeField] private Transform[] hitSens;
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
@@ -17,6 +20,12 @@ namespace Player
         private void Start()
         {
             ammoIndicatorObject.SetActive(false);
+            volumeObject.enabled = false;
+            foreach (var item in hitSens)
+            {
+                item.transform.localScale = Vector3.zero;
+                item.gameObject.SetActive(false);
+            }
         }
 
         #region GUN
@@ -66,7 +75,22 @@ namespace Player
 
         public void TakeDamage(Vector3 hitPos)
         {
+            CameraController.Instance.ShakeCamera();
+            volumeObject.enabled = true;
+            volumeObject.weight = 1.0f;
+            DOTween.To(() => volumeObject.weight, x => volumeObject.weight = x, 0, 0.5f)
+                .SetEase(Ease.Linear);
             Debug.Log("Taked Damege");
+        }
+
+        public void GiveDamage()
+        {
+            foreach (var item in hitSens)
+            {
+                item.transform.localScale = Vector3.zero;
+                item.gameObject.SetActive(true);
+                item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
+            }
         }
 
         public void Death()

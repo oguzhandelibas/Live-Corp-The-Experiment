@@ -9,9 +9,10 @@ namespace Player
     {
         [SerializeField] private PlayerController _playerController;
         private void OnTriggerEnter(Collider other)
-        {
+        { Debug.Log("helo");
             if (other.TryGetComponent(out YesYesController yesController))
             {
+               
                 yesController.ActivateChoosePlatform();
             }
             if (other.TryGetComponent(out MG_Controller mgController) && !mgController.HasTrigger)

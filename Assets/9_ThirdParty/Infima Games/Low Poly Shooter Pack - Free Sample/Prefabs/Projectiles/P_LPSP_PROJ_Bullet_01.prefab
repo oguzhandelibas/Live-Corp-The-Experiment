@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4879702113200764}
-  - component: {fileID: 54704279786675872}
   - component: {fileID: 65871565580582628}
   - component: {fileID: 96448838451407516}
   - component: {fileID: 114243545424532484}
+  - component: {fileID: 6073459451553525659}
   m_Layer: 8
   m_Name: P_LPSP_PROJ_Bullet_01
   m_TagString: Untagged
@@ -38,22 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54704279786675872
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086664671600574}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.65
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!65 &65871565580582628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -199,6 +183,22 @@ MonoBehaviour:
   - {fileID: 4587651611338842, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
   concreteImpactPrefabs:
   - {fileID: 4587651611338842, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
+--- !u!54 &6073459451553525659
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086664671600574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.65
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &1231345400216816
 GameObject:
   m_ObjectHideFlags: 0

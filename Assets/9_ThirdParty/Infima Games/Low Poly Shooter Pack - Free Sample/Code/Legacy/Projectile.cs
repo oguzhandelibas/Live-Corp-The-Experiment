@@ -158,6 +158,12 @@ public class Projectile : MonoBehaviour {
 		{
 			woodBreak.Break();
 		}
+		
+		if (collision.transform.TryGetComponent(out RaidTarget raidTarget))
+		{
+			raidTarget.TakeHit();
+		}
+
 
 		if (collision.transform.TryGetComponent(out IHealth iHealth))
 		{

@@ -1,5 +1,7 @@
 ﻿// Copyright 2021, Infima Games. All Rights Reserved.
 
+using NPC;
+using Player;
 using UnityEngine;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -249,8 +251,13 @@ namespace InfimaGames.LowPolyShooterPack
             
             //If there's something blocking, then we can aim directly at that thing, which will result in more accurate shooting.
             if (Physics.Raycast(new Ray(playerCamera.position, playerCamera.forward),
-                out RaycastHit hit, maximumDistance, mask))
+                    out RaycastHit hit, maximumDistance, mask))
+            {
+                if(hit.transform.GetComponent<AIBrain>())
+                    PlayerController.Instance.GiveDamage();
                 rotation = Quaternion.LookRotation(hit.point - muzzleSocket.position);
+            }
+                
                 
             //Spawn projectile from the projectile spawn point.
             GameObject projectile = Instantiate(prefabProjectile, muzzleSocket.position, rotation);
