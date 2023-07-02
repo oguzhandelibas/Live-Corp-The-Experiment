@@ -37,9 +37,9 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
  
 ### Sprint 1
 #### Sprint içinde tamamlanması tahmin edilen puan: 
-250 Puan
+240 Puan
 #### Puan tamamlama mantığı: 
-Toplamda proje boyunca tamamlanması gereken 500 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 250 puan ile başlaması gerektiğine karar verildi.
+Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 240 puan ile başlaması gerektiğine karar verildi.
 #### Daily Scrum: 
 Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı tüm günlerinde de yazılı şekilde gelişmeler aktarılmıştır. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats [Daily_scrum_chats.docx](https://github.com/oguzhandelibas/u68/files/11786346/Daily_scrum_chats.docx)
 
@@ -49,8 +49,10 @@ Product Backlog'daki görev kartlarının herkesçe anlaşılabilmesi adına kar
 ### Ürün Durumu:
 Ürünün biten bazı bölümlerinden ekran görüntüleri Read Me'ye eklenmiştir. Diğer bölümler bir sonraki sprint görevleriyle ilişkili olduğundan sonraki sprintte görsel değerlendirmesi gerçekleştirilecektir. 
 
- ![image](https://github.com/oguzhandelibas/u68/assets/130167514/f03c2a11-7508-4e18-ad8f-b1c7fda3070a)
-![image](https://github.com/oguzhandelibas/u68/assets/130167514/aebddcd8-ddb6-4a7b-a2a2-0097be8d2649)
+![ezgif com-video-to-gif (1)](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/7f90500e-aaee-4b38-8cec-6ca4f793333d)
+
+![ezgif com-video-to-gif (2)](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/fa08f400-a373-45e2-93c6-36aa5e7c08f9)
+
 
 ### Sprint board update: Sprint board screenshotları:
 ![u68 backlog](https://github.com/oguzhandelibas/u68/assets/130167514/6860870f-673d-4af9-b385-25fcb6563f56)
@@ -72,3 +74,43 @@ Fatma Nur Akdemir
 Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğine vurgu yapılmıştır.
 İlk sprintten gerekli iş akış verimi sağlanmıştır.
+
+......................................................................................................................................
+
+# Sprint 2
+
+### Sprint içinde tamamlanması tahmin edilen puan: 
+210 Puan
+### Puan Tamamlama Mantığı: 
+Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 240 puanlık geliştirme yapılmış olup 2. Sprintte 210 puanlık kısmın tamamlanması kararlaştırılmıştır.
+
+### Daily Scrum:
+Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı haftanın diğer günlerinde de yazılı şekilde gelişmeler aktarılmıştır.  Daily Scrum toplantısı yazışmaları jpeg olarak word dosyası içerisinde Readme'de paylaşılmaktadır: Sprint2-Daily Scrum Chats [Sprint2-Daily Scrum Chats.docx](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/files/11931421/Sprint2-Daily.Scrum.Chats.docx)
+
+### Sprint 2 Notları : 
+Bu sprintte takımca sprint 2 hedefleri ilk olarak belirlenmiştir ve userstorylere göre görev kartları güncellenmiştir. User Storyler product backloglarına yazılmıştır ve bunlar için oluşturulan görev kartlarının puan dağılımları yapılmıştır. Level tasarımı çizimi, anons diyalog ve npc görevleri tamamlanmıştır. Ayrıca game analytics ve scoreboard hazırlanmıştır. Sprint 1 de tamamlanan görevlerin üzerinden geçilmiştir. Görevler başarıyla yürütülmüştür. 
+
+### Ürün Durumu:
+Ürünün biten portal sistemine ilişkin ekran görüntüsü GIF şeklinde Read Me'ye eklenmiştir. Sprint 2 itibari ile oyunun mekanik yönden büyük bölümü tamamlanmıştır. Göselleştirme bölümleri bir sonraki sprint görevleriyle ilişkili olduğundan sonraki sprintte görsel değerlendirmesi gerçekleştirilecektir. 
+![ezgif com-video-to-gif-min](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/8e36afe9-35bf-40bb-bdae-a95ab4812818)
+
+
+### Sprint Board Update: Sprint board screenshotları:
+https://trello.com/b/ryeZV0tz/u68-development-workflow
+![sprint2 başlangıç](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/2be62310-94ff-4db1-89ec-fcea4e3544f0)
+![sprint2 bitiş](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/11ee7e3e-f8e3-4782-8b3a-8bfa4be8a42b)
+
+### Sprint Review: 
+Alınan kararlar: Oyunun genel sürecini oluşturan mekanikler ve modüller tamamlanmış, level tasarımının genel çerçevesi oluşturulmuştur ve eksiklikler değerlendirilmiştir. Beklenen hedefler tutturularak başarılı bir  sprint geçirilmiştir. 
+
+#### Sprint Review Katılımcıları: 
+-Oğuzhan Delibaş 
+-Aslı Rahime Erim 
+-Yağız Efe Atasever
+-Seyfullah Niyazi Tokmak 
+-Fatma Nur Akdemir 
+
+### Sprint Retrospective:
+Beklenen hedefler tutturularak başarılı bir sprint geçirilmiştir. Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğine vurgu yapılmıştır. İlk sprintten gerekli iş akış verimi sağlanmıştır.
+
+....................................................................................................................................
