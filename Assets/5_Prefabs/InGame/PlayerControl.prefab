@@ -3484,6 +3484,7 @@ GameObject:
   - component: {fileID: 8168819846682645947}
   - component: {fileID: 8168819846630117044}
   - component: {fileID: 6326180794032334139}
+  - component: {fileID: 1951595962792342739}
   - component: {fileID: 2743568405638749435}
   - component: {fileID: 2815613428962402521}
   - component: {fileID: 5884218047685609}
@@ -3585,6 +3586,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1951595962792342739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300790166326682909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271156d40088e894f884b40721b0daa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 4482951217021407920}
 --- !u!136 &2743568405638749435
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5195,8 +5209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8168819847242669821}
   - component: {fileID: 413754981023187279}
-  - component: {fileID: 5487879520448792332}
-  - component: {fileID: 7331844719346473998}
   m_Layer: 10
   m_Name: Root
   m_TagString: Untagged
@@ -5233,35 +5245,6 @@ CapsuleCollider:
   m_Height: 2.1932719
   m_Direction: 1
   m_Center: {x: -0, y: 0.9466361, z: -0.099999994}
---- !u!114 &5487879520448792332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168819847242669820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271156d40088e894f884b40721b0daa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerController: {fileID: 4482951217021407920}
---- !u!54 &7331844719346473998
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168819847242669820}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8191242218864933398
 GameObject:
   m_ObjectHideFlags: 0
