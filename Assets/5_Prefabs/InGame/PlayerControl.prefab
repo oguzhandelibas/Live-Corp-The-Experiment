@@ -6000,7 +6000,7 @@ PrefabInstance:
     - target: {fileID: 6046589879588722185, guid: 9482e0a2ae6a92742bbe72e00f29f763,
         type: 3}
       propertyPath: projectileImpulse
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6191921156492129727, guid: 9482e0a2ae6a92742bbe72e00f29f763,
         type: 3}
