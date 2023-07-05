@@ -93,7 +93,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.25
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 3
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyAfter: 2
   destroyOnImpact: 1
-  minDestroyTime: 0.01
-  maxDestroyTime: 0.05
+  minDestroyTime: 0.05
+  maxDestroyTime: 0.1
   bloodImpactPrefabs:
   - {fileID: 4587651611338842, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
   metalImpactPrefabs:

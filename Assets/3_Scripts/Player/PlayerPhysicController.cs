@@ -16,7 +16,7 @@ namespace Player
             }
             if (other.TryGetComponent(out MG_Controller mgController) && !mgController.HasTrigger)
             {
-                _playerController.Lock(mgController.transform);
+                _playerController.Lock(mgController.transform, true);
                 mgController.StartPathRoutine();
             }
             if (other.TryGetComponent(out RaidControl raidControl) && !raidControl.HasStarted)

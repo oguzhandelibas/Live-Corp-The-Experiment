@@ -3,6 +3,7 @@ using InfimaGames.LowPolyShooterPack;
 using NPC;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Player
@@ -12,18 +13,25 @@ namespace Player
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
         [SerializeField] private TimeHandler _timeHandler;
-        [SerializeField] private Volume volumeObject;
+        [SerializeField] private Volume takeDamageVolume;
+        [SerializeField] private Volume deadVolume;
         [SerializeField] private Transform[] hitSens;
         [SerializeField] private Image Crosshair;
-        
+
+        private int Health;
+        private bool alive;
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
 
         private void Start()
         {
+            alive = true;
+            Health = 100;
+            Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
-            volumeObject.enabled = false;
+            takeDamageVolume.enabled = false;
+            deadVolume.enabled = false;
             foreach (var item in hitSens)
             {
                 item.transform.localScale = Vector3.zero;
@@ -43,14 +51,18 @@ namespace Player
         
         #region MOVEMENT & ROTATION
 
-        public void Lock(Transform target)
+        public void Lock(Transform target, bool unlockAfter = false)
         {
             _character.isFreeze = true;
             _cameraLook.isFreeze = true;
             Transform playerPoint = target.GetChild(0);
             transform.position = playerPoint.position;
             transform.DORotateQuaternion(Quaternion.Euler(0, target.eulerAngles.y, 0), 0.5f);
-            _cameraLook.transform.DOLocalRotate(new Vector3(target.rotation.x, 0,0), 0.5f).OnComplete(UnlockRotation);
+            if (unlockAfter)
+                _cameraLook.transform.DOLocalRotate(new Vector3(target.rotation.x, 0, 0), 0.5f)
+                    .OnComplete(UnlockRotation);
+            else
+                _cameraLook.transform.DOLocalRotate(new Vector3(target.rotation.x, 0, 0), 0.5f);
         }
 
         public void UnlockRotation()
@@ -82,12 +94,14 @@ namespace Player
         }
         public void TakeDamage(Vector3 hitPos)
         {
+            if(!alive) return;
             CameraController.Instance.ShakeCamera();
-            volumeObject.enabled = true;
-            volumeObject.weight = 1.0f;
-            DOTween.To(() => volumeObject.weight, x => volumeObject.weight = x, 0, 0.5f)
+            takeDamageVolume.enabled = true;
+            takeDamageVolume.weight = 1.0f;
+            DOTween.To(() => takeDamageVolume.weight, x => takeDamageVolume.weight = x, 0, 0.5f)
                 .SetEase(Ease.Linear);
-            Debug.Log("Taked Damege");
+            Health -= 25;
+            if(Health<=0) Death();
         }
         public void GiveDamage()
         {
@@ -100,7 +114,14 @@ namespace Player
         }
         public void Death()
         {
-            Debug.Log("Died");
+            SetSlowMotion();
+            Lock(transform,false);
+            Crosshair.gameObject.SetActive(false);
+            alive = false;
+            deadVolume.enabled = true;
+            deadVolume.weight = 0.0f;
+            DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 1, 1.5f)
+                .SetEase(Ease.Linear).OnComplete(delegate { UIManager.Instance.Show<LosePanel>(); });
         }
     }
 }

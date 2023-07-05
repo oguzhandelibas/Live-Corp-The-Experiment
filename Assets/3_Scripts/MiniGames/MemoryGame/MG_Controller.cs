@@ -107,7 +107,6 @@ namespace MiniGame.MemoryGame
             else
             {
                 PlayerController.Instance.UnlockMovement();
-                Debug.Log("WIN!");
             }
         }
 
@@ -115,7 +114,7 @@ namespace MiniGame.MemoryGame
         {
             Fail = true;
             Outputs[SuccessCount].material = OutputWrongMaterial;
-            Debug.Log("LOST!");
+            Turret.Instance.ActivateTurret();
         }
         
         private void SetColor(MeshRenderer mR, Material m, float inTime)
