@@ -311,9 +311,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1813733147994537730}
   - component: {fileID: 1813733147994537729}
+  - component: {fileID: 5193280611205497488}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +350,19 @@ MonoBehaviour:
   TurretHead: {fileID: 0}
   PlayerTransform: {fileID: 0}
   rotationSpeed: 5
-  moveSpeed: 0
+--- !u!65 &5193280611205497488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813733147994537731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1813733148147052785
 GameObject:
   m_ObjectHideFlags: 0

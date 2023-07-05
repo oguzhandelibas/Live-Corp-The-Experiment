@@ -3725,10 +3725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 4482951217021407920}
   lookPoint: {fileID: 7694591170228352559}
-  InteractRange: 10
-  doesntCollide:
-    serializedVersion: 2
-    m_Bits: 128
+  InteractRange: 20
 --- !u!114 &5884218047685610
 MonoBehaviour:
   m_ObjectHideFlags: 0
