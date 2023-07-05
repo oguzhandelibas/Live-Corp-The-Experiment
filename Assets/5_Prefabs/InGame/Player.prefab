@@ -1828,6 +1828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4482951217021407920, guid: 58fe01c23f9a7844384532ae4be4d071,
         type: 3}
+      propertyPath: Crosshair
+      value: 
+      objectReference: {fileID: 3379980331311486029}
+    - target: {fileID: 4482951217021407920, guid: 58fe01c23f9a7844384532ae4be4d071,
+        type: 3}
       propertyPath: volumeObject
       value: 
       objectReference: {fileID: 452835721833870702}

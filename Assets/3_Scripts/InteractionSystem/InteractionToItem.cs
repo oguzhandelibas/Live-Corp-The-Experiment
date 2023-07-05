@@ -1,14 +1,16 @@
 using System;
 using MiniGame.DoorGame;
 using MiniGame.YesYes;
+using NPC;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class InteractionToItem : MonoBehaviour
 {
+    [SerializeField] private PlayerController _playerController;
     [SerializeField] private Transform lookPoint;
-    [SerializeField] private Image Crosshair;
     [SerializeField] private float InteractRange;
 
     private Ray r;
@@ -16,8 +18,6 @@ public class InteractionToItem : MonoBehaviour
     private void Update()
     {
         r = new Ray(lookPoint.transform.position, lookPoint.transform.forward * InteractRange);
-        Gizmos.color = Color.red;
-        Debug.DrawRay(lookPoint.transform.position, lookPoint.transform.forward * InteractRange);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out ChoicePlatform choicePlatform))
@@ -25,21 +25,29 @@ public class InteractionToItem : MonoBehaviour
                 if(!choicePlatform.yes) choicePlatform.Change();
             }
             
+            
             if (Interactable==null && hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 Interactable = interactObj;
-                Crosshair.color = Color.green;
+                _playerController.SetCrosshairColor(Color.green);
+                
                 if (Input.GetKeyDown(KeyCode.E))
-                {
-                    interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint);
-                }
+                { interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint); }
             }
-            else if(hitInfo.collider.gameObject.TryGetComponent(out WoodBreak woodBreak)) Crosshair.color = Color.red;
+            else if (hitInfo.collider.tag == "enemy" ||hitInfo.collider.GetComponent<WoodBreak>())
+            {
+                _playerController.SetCrosshairColor(Color.red);
+            }
             else
             {
-                Crosshair.color = Color.white;
+                _playerController.SetCrosshairColor(Color.white);
             }
         }
+        else
+        {
+            _playerController.SetCrosshairColor(Color.white);
+        }
+        
         if (Interactable != null)
         {
             if (Input.GetKeyUp(KeyCode.E))

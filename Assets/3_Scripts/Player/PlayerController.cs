@@ -3,6 +3,7 @@ using InfimaGames.LowPolyShooterPack;
 using NPC;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -13,6 +14,8 @@ namespace Player
         [SerializeField] private TimeHandler _timeHandler;
         [SerializeField] private Volume volumeObject;
         [SerializeField] private Transform[] hitSens;
+        [SerializeField] private Image Crosshair;
+        
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
@@ -73,6 +76,10 @@ namespace Player
 
         #endregion
 
+        public void SetCrosshairColor(Color crosshairColor)
+        {
+            Crosshair.color = crosshairColor;
+        }
         public void TakeDamage(Vector3 hitPos)
         {
             CameraController.Instance.ShakeCamera();
@@ -82,7 +89,6 @@ namespace Player
                 .SetEase(Ease.Linear);
             Debug.Log("Taked Damege");
         }
-
         public void GiveDamage()
         {
             foreach (var item in hitSens)
@@ -92,7 +98,6 @@ namespace Player
                 item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
             }
         }
-
         public void Death()
         {
             Debug.Log("Died");
