@@ -8,7 +8,6 @@ TagManager:
   - Target
   - FxTemporaire
   - Checkpoint
-  - enemy
   layers:
   - Default
   - TransparentFX

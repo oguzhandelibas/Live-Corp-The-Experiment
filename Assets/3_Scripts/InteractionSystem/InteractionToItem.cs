@@ -34,7 +34,7 @@ public class InteractionToItem : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 { interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint); }
             }
-            else if (hitInfo.collider.tag == "enemy" ||hitInfo.collider.GetComponent<WoodBreak>())
+            else if (hitInfo.collider.tag == "Target" ||hitInfo.collider.GetComponent<WoodBreak>())
             {
                 _playerController.SetCrosshairColor(Color.red);
             }
