@@ -13,8 +13,69 @@ MonoBehaviour:
   m_Name: AudioDatas
   m_EditorClassIdentifier: 
   AudioText:
-  - Welcome subject 68 today we are going to try something new with you
-  - first of all lets go throug this portal
+  - Good morning, Subject U68. You are on the last day of the Live Corp tests. The
+    promised payment will be transferred to your account at the end of the day.
+  - Thank you for choosing to join our program.
+  - Please use the portal in your room to stabilize your chip before starting today's
+    portal experiments.
+  - Find the box in your room for controlling your psychic powers, lift it up in
+    the air, and then drop it to the ground.
+  - The next portal is ready. When you feel ready, please proceed to the next room.
+  - U68's heart rate is stable. There is no irregularity in breathing. Sleep pattern
+    is normal. We will now begin today's measurements with a memory test.
+  - We will compare the results of this memory test with the previous ones. Meanwhile,
+    we will be observing the intensity of brain activity.
+  - 'The rules are the same as last time: Specific squares will flash on and off.
+    We want you to press the squares in the order of their illumination.'
+  - You have successfully completed it. I want you to go through the portal one more
+    time. Then we will conduct another test for a status check. Now, please proceed
+    to the next experiment.
+  - The next portal is ready. When you feel ready, please proceed to the next room.
+  - U68, there is currently no task for you there. Please return to the beginning
+    of the experiment immediately.
+  - It seems like you don't want your money. The portal is waiting for you outside.
+  - In the next experiment... I believe something is going wrong.
+  - One of our maintenance robots has malfunctioned, U68. We need you to dispose
+    of the robot to prevent any further issues.
+  - This will be an additional experiment that will allow us to gather more detailed
+    data on your muscular system and reflexes.
+  - Therefore, we will make an additional payment to your fee. You are free to make
+    a choice. Do you accept?
+  - I'm glad you made the right choice.
+  - Now I want you to pick up the weapon on the platform. We don't want the robot
+    to harm you.
+  - We might experience communication issues inside, but don't worry, you will be
+    monitored by cameras. Don't get distracted under any circumstances!
+  - We apologize, U68, but you now know too much. We cannot continue this experiment
+    in this manner.
+  - I told you not to get distracted. What are you still waiting for?
+  - Attention all units! Subject U68 has escaped from the route.
+  - It will be terminated on sight. Other subjects should not leave their rooms.
+  - Attention all units! Subject U68 has escaped from the route.
+  - It will be terminated on sight. Other subjects should not leave their rooms.
   AudioClips:
-  - {fileID: 8300000, guid: d984b7a6226a65648b8a91a6d9bf4437, type: 3}
-  - {fileID: 8300000, guid: 32bc45b0a0070044dbb39df1c72a7e5e, type: 3}
+  - {fileID: 8300000, guid: 8f4361704da9fc0408975f4caf0a931e, type: 3}
+  - {fileID: 8300000, guid: d574d642cc888954d8b96245dd683c2c, type: 3}
+  - {fileID: 8300000, guid: 8cd93614e9a30ed4f8471b0b7661adcd, type: 3}
+  - {fileID: 8300000, guid: 0f527776d8f770748aa706d5902b798f, type: 3}
+  - {fileID: 8300000, guid: 52d226f9c454ab542b68bc5e1686293a, type: 3}
+  - {fileID: 8300000, guid: f01b7acc3c9b87041942b1890247a403, type: 3}
+  - {fileID: 8300000, guid: 29ee4203554957041932d386eb794cf0, type: 3}
+  - {fileID: 8300000, guid: a4b05cbf3d3678440ba84adeefe1ab70, type: 3}
+  - {fileID: 8300000, guid: d83d7f4c7e2183d48ad1ddb992ef5111, type: 3}
+  - {fileID: 8300000, guid: 52d226f9c454ab542b68bc5e1686293a, type: 3}
+  - {fileID: 8300000, guid: deee17ed91a221846a0eacdf68c9d8ab, type: 3}
+  - {fileID: 8300000, guid: fff700e608f4c774d9398405eb06b58f, type: 3}
+  - {fileID: 8300000, guid: 3f82f1073ed6e1e429f2a3fdd2b77747, type: 3}
+  - {fileID: 8300000, guid: e993d56a562404046bafad798731af65, type: 3}
+  - {fileID: 8300000, guid: b12666755d5811a4fa6b6ca16c2696b5, type: 3}
+  - {fileID: 8300000, guid: 8c74664179975994f9e99d58d296c839, type: 3}
+  - {fileID: 8300000, guid: 6ff325ed77169d54ea8da2e76e5cbc11, type: 3}
+  - {fileID: 8300000, guid: d6dc4113b0b1f3f49bb3282f145750c2, type: 3}
+  - {fileID: 8300000, guid: ed17ab37402984b42bb1380a88c9a789, type: 3}
+  - {fileID: 8300000, guid: 4757f2e4ddd0e46438ce5b1c2a81fab7, type: 3}
+  - {fileID: 8300000, guid: 0d3d1ebb27e03ef438b312c992b0787f, type: 3}
+  - {fileID: 8300000, guid: 5e1f3fe51a746e44cbdcdd62a803f25a, type: 3}
+  - {fileID: 8300000, guid: e0bd9df0268156d4a8465d3b91e991de, type: 3}
+  - {fileID: 8300000, guid: e5b6ff0d3c6123f4cb4dcb290e2766ac, type: 3}
+  - {fileID: 8300000, guid: f9113a3f776bef34c9aad7dea8264878, type: 3}

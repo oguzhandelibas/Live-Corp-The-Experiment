@@ -25,7 +25,7 @@ public class AudioManager : AbstractSingleton<AudioManager>
     /// </summary>
     /// <param name="index"></param>
     /// <returns>Wait Time</returns>
-    public float PlayAudioClip(int index = -1)
+    public float PlayAudioClip(Transform target, int index = -1)
     {
         if (index >= 0)
         {
@@ -37,6 +37,8 @@ public class AudioManager : AbstractSingleton<AudioManager>
             {
                 Play(AudioDatas.AudioClips[index], index);
             }
+
+            transform.position = target.position;
         }
         else
         {

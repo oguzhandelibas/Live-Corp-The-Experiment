@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class AudioTrigger : MonoBehaviour
 {
-    [SerializeField] private int AudioIndex;
+    [SerializeField] private Transform audioManagerPosition;
+    [SerializeField] private int[] AudioIndex;
     private BoxCollider boxCollider;
 
     private void OnEnable()
@@ -15,8 +16,11 @@ public class AudioTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AudioManager.Instance.PlayAudioClip(AudioIndex);
-        //boxCollider.enabled = false;
+        foreach (var item in AudioIndex)
+        {
+            AudioManager.Instance.PlayAudioClip(audioManagerPosition, item);
+        }
+        boxCollider.enabled = false;
 
     }
 }
