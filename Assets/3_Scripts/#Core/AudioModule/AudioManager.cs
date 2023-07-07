@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class PlayList
 {
     public int Index;
@@ -18,8 +19,31 @@ public class AudioManager : AbstractSingleton<AudioManager>
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioDatas AudioDatas;
-    private List<PlayList> PlayList = new List<PlayList>();
+    [SerializeField] private List<PlayList> PlayList = new List<PlayList>();
+    private int totalSoundCount = 0;
+    private AudioTrigger audioTrigger;
+    
+    public void AddAudioClip(AudioTrigger _audioTrigger, int index = -1)
+    {
+        audioTrigger = _audioTrigger;
+        if (index >= 0)
+        {
+            PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
+        }
 
+        totalSoundCount = PlayList.Count;
+    }
+
+    public void AddAudioClip(int index = -1)
+    {
+        if (index >= 0)
+        {
+            PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
+        }
+
+        totalSoundCount = PlayList.Count;
+    }
+    
     /// <summary>
     /// Calls AudioClip
     /// </summary>
@@ -29,15 +53,7 @@ public class AudioManager : AbstractSingleton<AudioManager>
     {
         if (index >= 0)
         {
-            if (audioSource.isPlaying)
-            {
-                PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
-            }
-            else
-            {
-                Play(AudioDatas.AudioClips[index], index);
-            }
-
+            CheckPlayList();
             transform.position = target.position;
         }
         else
@@ -53,7 +69,9 @@ public class AudioManager : AbstractSingleton<AudioManager>
     {
         audioSource.clip = clip;
         audioSource.Play();
-        SubtitleManager.Instance.SetSubText(AudioDatas.AudioText[index], audioSource.clip.length);
+        bool lastSound = totalSoundCount-1 == PlayList[0].Index;
+        
+        SubtitleManager.Instance.SetSubText(audioTrigger, AudioDatas.AudioText[index], audioSource.clip.length, lastSound);
         Invoke("CheckPlayList", audioSource.clip.length);
     }
 

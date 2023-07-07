@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 96448838451407516}
   - component: {fileID: 114243545424532484}
   - component: {fileID: 6073459451553525659}
-  m_Layer: 8
-  m_Name: P_LPSP_PROJ_Bullet_01
+  m_Layer: 12
+  m_Name: Player_LPSP_PROJ_Bullet_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,11 +17,11 @@ TagManager:
   - UI
   - NotCollision
   - RagdollPart
-  - Projectile
+  - EnemyProjectile
   - NavMeshGround
   - Player
   - PlayerBase
-  - 
+  - PlayerProjectile
   - 
   - 
   - 

@@ -37,6 +37,8 @@ namespace Player
                 item.transform.localScale = Vector3.zero;
                 item.gameObject.SetActive(false);
             }
+            
+            WakeUp();
         }
 
         #region GUN
@@ -112,6 +114,18 @@ namespace Player
                 item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
             }
         }
+        
+        public void WakeUp()
+        {
+            Crosshair.gameObject.SetActive(false);
+            alive = true;
+            deadVolume.enabled = true;
+            deadVolume.weight = 1.0f;
+            DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 0, 2.5f)
+                .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.gameObject.SetActive(true); });
+            
+        }
+        
         public void Death()
         {
             SetSlowMotion();

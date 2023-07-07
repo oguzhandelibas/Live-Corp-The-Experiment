@@ -171,7 +171,6 @@ namespace InfimaGames.LowPolyShooterPack
         private void MoveCharacter()
         {
             #region Calculate Movement Velocity
-
             if (playerCharacter.IsFreeze())
             {
                 rigidBody.velocity = Vector3.zero;

@@ -13,46 +13,54 @@ MonoBehaviour:
   m_Name: AudioDatas
   m_EditorClassIdentifier: 
   AudioText:
-  - Good morning, Subject U68. You are on the last day of the Live Corp tests. The
-    promised payment will be transferred to your account at the end of the day.
-  - Thank you for choosing to join our program.
-  - Please use the portal in your room to stabilize your chip before starting today's
-    portal experiments.
-  - Find the box in your room for controlling your psychic powers, lift it up in
-    the air, and then drop it to the ground.
-  - The next portal is ready. When you feel ready, please proceed to the next room.
-  - U68's heart rate is stable. There is no irregularity in breathing. Sleep pattern
-    is normal. We will now begin today's measurements with a memory test.
-  - We will compare the results of this memory test with the previous ones. Meanwhile,
-    we will be observing the intensity of brain activity.
-  - 'The rules are the same as last time: Specific squares will flash on and off.
-    We want you to press the squares in the order of their illumination.'
-  - You have successfully completed it. I want you to go through the portal one more
-    time. Then we will conduct another test for a status check. Now, please proceed
-    to the next experiment.
-  - The next portal is ready. When you feel ready, please proceed to the next room.
-  - U68, there is currently no task for you there. Please return to the beginning
-    of the experiment immediately.
-  - It seems like you don't want your money. The portal is waiting for you outside.
-  - In the next experiment... I believe something is going wrong.
-  - One of our maintenance robots has malfunctioned, U68. We need you to dispose
-    of the robot to prevent any further issues.
-  - This will be an additional experiment that will allow us to gather more detailed
-    data on your muscular system and reflexes.
-  - Therefore, we will make an additional payment to your fee. You are free to make
-    a choice. Do you accept?
-  - I'm glad you made the right choice.
-  - Now I want you to pick up the weapon on the platform. We don't want the robot
-    to harm you.
-  - We might experience communication issues inside, but don't worry, you will be
-    monitored by cameras. Don't get distracted under any circumstances!
-  - We apologize, U68, but you now know too much. We cannot continue this experiment
-    in this manner.
-  - I told you not to get distracted. What are you still waiting for?
-  - Attention all units! Subject U68 has escaped from the route.
-  - It will be terminated on sight. Other subjects should not leave their rooms.
-  - Attention all units! Subject U68 has escaped from the route.
-  - It will be terminated on sight. Other subjects should not leave their rooms.
+  - "G\xFCnayd\u0131n Denek U68. Live Corp Testlerinin son g\xFCn\xFCndesin. S\xF6z
+    verdi\u011Fimiz \xFCcret g\xFCn\xFCn sonunda hesab\u0131na yatacak."
+  - "Program\u0131m\u0131za kat\u0131lmay\u0131 tercih etti\u011Fin i\xE7in te\u015Fekk\xFCr
+    ederiz."
+  - "L\xFCtfen bug\xFCn\xFCn portal deneylerine ba\u015Flamadan \xF6nce odandaki
+    portal\u0131 kullanarak \xE7ipini stabilize et."
+  - "Psi\u015Fik g\xFC\xE7lerinin kontrol\xFC i\xE7in odadaki kutuyu bul, havaya
+    kald\u0131r\u0131p yere b\u0131rak."
+  - "Sonraki portal\u0131n haz\u0131r, kendini haz\u0131r hissetti\u011Finde L\xFCtfen
+    bir sonraki odaya ilerle."
+  - "U68 Kalp ritmi stabil. Nefes d\xFCzensizli\u011Fi bulunmuyor. Uyku d\xFCzeni
+    yerinde. \u015Eimdi haf\u0131za testi ile bug\xFCn\xFCn \xF6l\xE7\xFCmlerine
+    ba\u015Fl\u0131yoruz. "
+  - "Bu haf\u0131za testindeki sonu\xE7lar\u0131n\u0131, daha \xF6ncekilerle kar\u015F\u0131la\u015Ft\u0131raca\u011F\u0131z.
+    Bu s\u0131rada beynindeki aktivite yo\u011Funlu\u011Funu g\xF6zlemliyor olaca\u011F\u0131z. "
+  - "Kurallar ge\xE7en seferkilerle ayn\u0131: Belirli kareler yan\u0131p s\xF6necek.
+    Karelere yanma s\u0131ras\u0131na g\xF6re basman\u0131 istiyoruz."
+  - "Ba\u015Far\u0131yla tamamlad\u0131n. Portaldan bir kere daha ge\xE7meni istiyorum.
+    Ard\u0131ndan durum kontrol\xFC i\xE7in yeni bir test daha yapaca\u011F\u0131z.
+    \u015Eimdi, bir sonraki deneye ilerle l\xFCtfen. Sonraki portal\u0131n haz\u0131r,
+    kendini haz\u0131r hissetti\u011Finde L\xFCtfen bir sonraki odaya ilerle. "
+  - "Sonraki portal\u0131n haz\u0131r, kendini haz\u0131r hissetti\u011Finde L\xFCtfen
+    bir sonraki odaya ilerle."
+  - "U68 \u015Fu anda orada bir i\u015Fin yok. Derhal deneyin ba\u015F\u0131na d\xF6n."
+  - "Paran\u0131 istemiyor gibisin. D\u0131\u015Far\u0131da portal seni bekliyor."
+  - "S\u0131radaki deneyde\u2026 San\u0131r\u0131m bir \u015Feyler ters gidiyor."
+  - "U68 sistem bak\u0131m robotlar\u0131m\u0131zdan biri ar\u0131zaland\u0131. Robotun
+    sorun \xE7\u0131karmamas\u0131 i\xE7in imha etmeni istiyoruz. "
+  - "Bu ekstra bir deney olacak. Kas sistemin ve reflekslerinle ilgili daha detayl\u0131
+    veri toplamam\u0131za olanak sa\u011Flayacak. "
+  - "Dolay\u0131s\u0131yla \xFCcretine ekleme yapaca\u011F\u0131z. Se\xE7im yapmakta
+    \xF6zg\xFCrs\xFCn. Kabul ediyor musun?"
+  - "Do\u011Fru se\xE7imi yapmana sevindim."
+  - "\u015Eimdi platformdaki silah\u0131 alman\u0131 istiyorum. Robotun sana zarar
+    vermesini istemeyiz."
+  - "\u0130\xE7eride ileti\u015Fimde sorun ya\u015Fayabiliriz. Ama endi\u015Felenme,
+    kamera ile g\xF6zlemleniyor olacaks\u0131n. Sak\u0131n oyalanma!"
+  - "\xDCzg\xFCn\xFCz U68 art\u0131k \xE7ok fazla \u015Fey biliyorsun. Bu deneyi
+    b\xF6yle s\xFCrd\xFCremeyiz."
+  - "Sana oyalanma demi\u015Ftim. Hala neyi bekliyorsun?"
+  - "T\xFCm birimlerin dikkatine! U68 numaral\u0131 denek rotadan ka\xE7m\u0131\u015F
+    durumda."
+  - "G\xF6r\xFCld\xFC\u011F\xFC yerde infaz edilecek. Di\u011Fer deneklerin, odalar\u0131ndan
+    ayr\u0131lmamalar\u0131 gerekmektedir."
+  - "T\xFCm birimlerin dikkatine! U68 numaral\u0131 denek rotadan ka\xE7m\u0131\u015F
+    durumda. "
+  - "G\xF6r\xFCld\xFC\u011F\xFC yerde infaz edilecek. Di\u011Fer deneklerin, odalar\u0131ndan
+    ayr\u0131lmamalar\u0131 gerekmektedir."
   AudioClips:
   - {fileID: 8300000, guid: 8f4361704da9fc0408975f4caf0a931e, type: 3}
   - {fileID: 8300000, guid: d574d642cc888954d8b96245dd683c2c, type: 3}

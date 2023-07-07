@@ -3532,7 +3532,8 @@ MonoBehaviour:
   _character: {fileID: 8168819846630117044}
   _cameraLook: {fileID: 2845106108767373666}
   _timeHandler: {fileID: 5437039131904638568}
-  volumeObject: {fileID: 0}
+  takeDamageVolume: {fileID: 0}
+  deadVolume: {fileID: 0}
   hitSens: []
   Crosshair: {fileID: 0}
   ammoIndicatorObject: {fileID: 0}
@@ -5981,6 +5982,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6046589879588722185, guid: 9482e0a2ae6a92742bbe72e00f29f763,
+        type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 1086664671600574, guid: 1d30365c5413bc144b2e51b2f27fd8f1,
+        type: 3}
     - target: {fileID: 6046589879588722185, guid: 9482e0a2ae6a92742bbe72e00f29f763,
         type: 3}
       propertyPath: projectileImpulse

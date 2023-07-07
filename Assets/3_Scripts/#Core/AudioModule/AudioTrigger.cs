@@ -1,10 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AudioTrigger : MonoBehaviour
 {
+    public UnityEvent TriggerEvent;
     [SerializeField] private Transform audioManagerPosition;
     [SerializeField] private int[] AudioIndex;
     private BoxCollider boxCollider;
@@ -16,11 +16,18 @@ public class AudioTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<PlayerController>() == null) return;
+        
         foreach (var item in AudioIndex)
         {
-            AudioManager.Instance.PlayAudioClip(audioManagerPosition, item);
+            AudioManager.Instance.AddAudioClip(this, item);
         }
+        AudioManager.Instance.PlayAudioClip(audioManagerPosition, AudioIndex[0]);
         boxCollider.enabled = false;
+    }
 
+    public void InvokeEvent()
+    {
+        TriggerEvent.Invoke();
     }
 }
