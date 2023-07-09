@@ -705,7 +705,7 @@ namespace InfimaGames.LowPolyShooterPack
 				return;
 			
 			//Switch.
-			switch (context.phase)
+			/*switch (context.phase)
 			{
 				//Performed.
 				case InputActionPhase.Performed:
@@ -713,7 +713,7 @@ namespace InfimaGames.LowPolyShooterPack
 					HolsterIssue();
 					
 					break;
-			}
+			}*/
 		}
 
 		public void HolsterIssue()
