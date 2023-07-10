@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using DG.Tweening;
 using Player;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -37,6 +38,10 @@ namespace MiniGame.MemoryGame
         private bool Fail = false;
         public bool CanInteract { get; set; }
         public bool HasTrigger { get; set; }
+
+        [Header("Event")] 
+        public UnityEvent OnSuccess;
+        public UnityEvent OnFail;
 
         private void Start()
         {
@@ -106,6 +111,7 @@ namespace MiniGame.MemoryGame
             }
             else
             {
+                OnSuccess?.Invoke();
                 PlayerController.Instance.UnlockMovement();
             }
         }
@@ -114,7 +120,7 @@ namespace MiniGame.MemoryGame
         {
             Fail = true;
             Outputs[SuccessCount].material = OutputWrongMaterial;
-            Turret.Instance.ActivateTurret();
+            OnFail?.Invoke();
         }
         
         private void SetColor(MeshRenderer mR, Material m, float inTime)

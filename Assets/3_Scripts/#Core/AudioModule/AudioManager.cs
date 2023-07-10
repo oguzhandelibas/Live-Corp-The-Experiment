@@ -40,7 +40,6 @@ public class AudioManager : AbstractSingleton<AudioManager>
         {
             PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
         }
-
         totalSoundCount = PlayList.Count;
     }
     
