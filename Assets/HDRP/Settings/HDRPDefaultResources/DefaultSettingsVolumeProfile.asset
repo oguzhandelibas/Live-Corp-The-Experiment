@@ -143,10 +143,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   upperHemisphereLuxValue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.4660715
   upperHemisphereLuxColor:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.18750614, y: 0.29181972, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.2
   scatter:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.7
   tint:
     m_OverrideState: 0
@@ -489,8 +489,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.5
   directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   radius:
     m_OverrideState: 1
     m_Value: 1.5
@@ -559,7 +559,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 4
   toeStrength:
     m_OverrideState: 0
     m_Value: 0
