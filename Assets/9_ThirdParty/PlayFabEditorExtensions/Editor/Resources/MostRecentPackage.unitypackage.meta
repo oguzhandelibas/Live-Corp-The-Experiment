@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/1_Scenes/Test/Test 1 - Efe.meta
+guid: 54e0a45ed2ee04263a9e5ff5d0850b35
+folderAsset: yes
+========
 guid: 732dce7b5dbc38e41a6a14eb700c7ae3
+>>>>>>>> Stashed changes:Assets/9_ThirdParty/PlayFabEditorExtensions/Editor/Resources/MostRecentPackage.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
