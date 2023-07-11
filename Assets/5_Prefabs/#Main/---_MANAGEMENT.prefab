@@ -1824,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &101783725297037200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2280,6 +2280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8738202736699197596}
   AudioDatas: {fileID: 11400000, guid: 0405e5c9be43efe478f204a0301fe1b1, type: 2}
+  PlayList: []
 --- !u!82 &8738202736699197596
 AudioSource:
   m_ObjectHideFlags: 0
