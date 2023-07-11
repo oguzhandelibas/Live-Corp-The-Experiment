@@ -41,6 +41,12 @@ public class AudioManager : AbstractSingleton<AudioManager>
             PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
         }
         totalSoundCount = PlayList.Count;
+
+        if (!audioSource.isPlaying)
+        {
+            Play(PlayList[0].audioClip, PlayList[0].Index);
+            PlayList.RemoveAt(0);
+        }
     }
     
     /// <summary>
@@ -68,8 +74,8 @@ public class AudioManager : AbstractSingleton<AudioManager>
     {
         audioSource.clip = clip;
         audioSource.Play();
-        bool lastSound = totalSoundCount-1 == PlayList[0].Index;
-        
+        bool lastSound = (totalSoundCount-1 == PlayList[0].Index) || PlayList.Count <= 1;
+        Debug.Log(PlayList.Count);
         SubtitleManager.Instance.SetSubText(audioTrigger, AudioDatas.AudioText[index], audioSource.clip.length, lastSound);
         Invoke("CheckPlayList", audioSource.clip.length);
     }

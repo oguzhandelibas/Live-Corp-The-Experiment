@@ -28,20 +28,20 @@ public class SubtitleManager : AbstractSingleton<SubtitleManager>
         if (lastSound)
         {
             audioTrigger.InvokeEvent();
-            SetSubtitleActiveness(false);    
+            SetSubtitleActiveness(false, 0.25f);    
         }
         
     }
 
-    public void SetSubtitleActiveness(bool value)
+    public void SetSubtitleActiveness(bool value, float time = 0.0f)
     {
-        if (!value) StartCoroutine(DeactivateRoutine());
+        if (!value) StartCoroutine(DeactivateRoutine(time));
         else SubtitleText.gameObject.SetActive(value);
     }
 
-    IEnumerator DeactivateRoutine()
+    IEnumerator DeactivateRoutine(float time = 0.0f)
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(time);
         SubtitleText.gameObject.SetActive(false);
     }
 }

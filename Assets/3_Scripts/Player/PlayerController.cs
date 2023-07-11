@@ -18,6 +18,11 @@ namespace Player
         [SerializeField] private Transform[] hitSens;
         [SerializeField] private Image Crosshair;
 
+        [Header("UI Panels")] 
+        [SerializeField] private GameObject TutorialPanel;
+        [SerializeField] private GameObject MovementIndicator;
+        [SerializeField] private GameObject CollectIndicator;
+        
         private int Health;
         private bool alive;
         private bool canMove;
@@ -28,6 +33,9 @@ namespace Player
         {
             alive = true;
             Health = 100;
+            TutorialPanelActiveness(false);
+            TutorialMovementActiveness(false);
+            TutorialCollectActiveness(false);
             Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
@@ -90,10 +98,30 @@ namespace Player
 
         #endregion
 
+        #region UI
+
         public void SetCrosshairColor(Color crosshairColor)
         {
             Crosshair.color = crosshairColor;
         }
+
+        public void TutorialPanelActiveness(bool panel)
+        {
+            TutorialPanel.SetActive(panel);
+        }
+
+        public void TutorialMovementActiveness(bool movement)
+        {
+            MovementIndicator.SetActive(movement);
+        }
+        
+        public void TutorialCollectActiveness(bool collect)
+        {
+            CollectIndicator.SetActive(collect);
+        }
+
+        #endregion
+        
         public void TakeDamage(Vector3 hitPos)
         {
             if(!alive) return;
@@ -114,7 +142,6 @@ namespace Player
                 item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
             }
         }
-        
         public void WakeUp()
         {
             Crosshair.gameObject.SetActive(false);
@@ -125,7 +152,6 @@ namespace Player
                 .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.gameObject.SetActive(true); });
             
         }
-        
         public void Death()
         {
             SetSlowMotion();
