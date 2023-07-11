@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 86612500}
   - component: {fileID: 86612499}
   - component: {fileID: 86612498}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 442151374}
   - component: {fileID: 442151373}
   - component: {fileID: 442151372}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 489545334}
   - component: {fileID: 489545333}
   - component: {fileID: 489545332}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 936711980}
   - component: {fileID: 936711979}
   - component: {fileID: 936711978}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1042997199
 Transform:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042997198}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 1109959856}
   - component: {fileID: 1109959855}
   - component: {fileID: 1109959854}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1369960996
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +885,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369960995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 1913042957}
   - component: {fileID: 1913042956}
   - component: {fileID: 1913042955}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   portalViewCamera: {fileID: 20390015443384288}
-  portalViewResolution: 512
+  portalViewResolution: 1024
   portalRoot1: {fileID: 4309972666963082}
   portalRoot2: {fileID: 4234653001698542}
   nearClipPlaneThreshold: 1
@@ -2115,7 +2115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   portalViewCamera: {fileID: 20888945919161130}
-  portalViewResolution: 512
+  portalViewResolution: 1024
   portalRoot1: {fileID: 4234653001698542}
   portalRoot2: {fileID: 4309972666963082}
   nearClipPlaneThreshold: 1
