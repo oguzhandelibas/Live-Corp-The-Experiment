@@ -3358,6 +3358,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6278543979663298412}
     m_Modifications:
+    - target: {fileID: 7349305021392391689, guid: 1ccd939e8ca897845ab53ac325137fbb,
+        type: 3}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7349305021392391691, guid: 1ccd939e8ca897845ab53ac325137fbb,
         type: 3}
       propertyPath: m_Name
@@ -3371,7 +3376,7 @@ PrefabInstance:
     - target: {fileID: 7349305021392391694, guid: 1ccd939e8ca897845ab53ac325137fbb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2000349
+      value: -1.2000351
       objectReference: {fileID: 0}
     - target: {fileID: 7349305021392391694, guid: 1ccd939e8ca897845ab53ac325137fbb,
         type: 3}
@@ -3474,7 +3479,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2000349
+      value: -1.2000351
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -3529,6 +3534,11 @@ PrefabInstance:
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
+        type: 3}
+      propertyPath: m_Lens.FarClipPlane
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
