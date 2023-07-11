@@ -2,11 +2,13 @@ using UnityEngine;
 using DG.Tweening;
 using Player;
 using InfimaGames.LowPolyShooterPack;
+using UnityEngine.Events;
 
 namespace MiniGame.YesYes
 {
     public class YesYesController : MonoBehaviour
     {
+        public UnityEvent OnChoose;
         [SerializeField] private PlayerController _playerController;
         [Header("Portal")]
         [SerializeField] private GameObject portal;
@@ -32,9 +34,9 @@ namespace MiniGame.YesYes
             yesPlatformRenderer.material = yesMaterial;
             noPlatformRenderer.material = noMaterial;
 
-            yesPlatform.transform.localPosition = new Vector3(0.75f, -0.5f, 0.0f);
-            noPlatform.transform.localPosition = new Vector3(-0.75f, -0.5f, 0.0f);
-            gunPlatform.transform.localPosition = new Vector3(0.0f, -0.5f, 0.0f);
+            yesPlatform.transform.localPosition = new Vector3(0.75f, -0.75f, 0.0f);
+            noPlatform.transform.localPosition = new Vector3(-0.75f, -0.75f, 0.0f);
+            gunPlatform.transform.localPosition = new Vector3(0.0f, -0.75f, 0.0f);
             
             yesPlatform.gameObject.SetActive(false);
             noPlatform.gameObject.SetActive(false);
@@ -95,6 +97,7 @@ namespace MiniGame.YesYes
 
         public void DeactivateGunPlatform()
         {
+            OnChoose?.Invoke();
             _playerController.SetGun();
             Vector3 gunPlatformTargetPos = new Vector3(0.0f, -0.5f, 0.0f);
             gunPlatform.DOLocalMove(gunPlatformTargetPos, 0.5f).OnComplete(Deactivate);
