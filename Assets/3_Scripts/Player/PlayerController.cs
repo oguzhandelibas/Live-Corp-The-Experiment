@@ -35,9 +35,12 @@ namespace Player
         {
             alive = true;
             Health = 100;
+            
             TutorialPanelActiveness(false);
             TutorialMovementActiveness(false);
             TutorialCollectActiveness(false);
+            TimerPanelActiveness(false);
+
             Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
@@ -118,6 +121,11 @@ namespace Player
         public void TutorialCollectActiveness(bool collect)
         {
             CollectIndicator.SetActive(collect);
+        }
+
+        public void TimerPanelActiveness(bool timer)
+        {Debug.Log("halaolaoool");
+            TimerIndicator.SetActive(timer);
         }
 
         #endregion

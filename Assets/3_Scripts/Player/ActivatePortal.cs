@@ -8,19 +8,19 @@ public class ActivatePortal : MonoBehaviour
 
     private void Start()
     {
-        portal.transform.position += (Vector3.down*3);
+        Deactivate();
     }
 
     public void Activate()
     {
-        Debug.Log("Activated");
+        gameObject.SetActive(true);
         Vector3 targetPos = portal.transform.localPosition + (Vector3.up*3);
         portal.transform.DOLocalMove(targetPos, 1);
     }
 
     public void Deactivate()
     {
-        Debug.Log("Deactivated");
+        gameObject.SetActive(false);
         Vector3 targetPos = portal.transform.localPosition + (Vector3.down*3);
         portal.transform.DOLocalMove(targetPos, 1);
     }

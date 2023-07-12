@@ -3,23 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MiniGame.RaidGame
 {
     public class RaidTarget : MonoBehaviour
     {
-        [SerializeField] private RaidControl _raidControl;
-    
+        public UnityEvent OnDie;
+
         public void TakeHit()
         {
-            _raidControl.FinishSlowMotionGame();
-        }
-        IEnumerator HitRoutine()
-        {
-            transform.DOLocalRotate(new Vector3(0, 0, -90), 1);
-            yield return new WaitForSeconds(1);
-            
-            
+            OnDie?.Invoke();                                                                                                                               
         }
     }
 }
