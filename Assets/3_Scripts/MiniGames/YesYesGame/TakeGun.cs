@@ -9,7 +9,6 @@ namespace MiniGame.YesYes
 
         public void InteractStart(GameObject interactObject, Transform parent)
         {
-            _yesController.ActivatePortal();
             _yesController.DeactivateGunPlatform();
         }
 

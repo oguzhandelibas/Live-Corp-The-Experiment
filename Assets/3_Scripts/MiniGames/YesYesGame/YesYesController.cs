@@ -10,9 +10,7 @@ namespace MiniGame.YesYes
     {
         public UnityEvent OnChoose;
         [SerializeField] private PlayerController _playerController;
-        [Header("Portal")]
-        [SerializeField] private GameObject portal;
-        
+
         [Header("Platforms")]
         [SerializeField] private ChoicePlatform yesPlatform;
         [SerializeField] private ChoicePlatform noPlatform;
@@ -65,11 +63,6 @@ namespace MiniGame.YesYes
             
         }
 
-        public void ActivatePortal()
-        {
-            portal.gameObject.SetActive(true);
-        }
-        
         public void ActivateChoosePlatform()
         {
             _boxCollider.enabled = false;
@@ -98,7 +91,6 @@ namespace MiniGame.YesYes
         public void DeactivateGunPlatform()
         {
             OnChoose?.Invoke();
-            _playerController.SetGun();
             Vector3 gunPlatformTargetPos = new Vector3(0.0f, -0.5f, 0.0f);
             gunPlatform.DOLocalMove(gunPlatformTargetPos, 0.5f).OnComplete(Deactivate);
             

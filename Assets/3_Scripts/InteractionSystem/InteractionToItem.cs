@@ -30,9 +30,11 @@ public class InteractionToItem : MonoBehaviour
             {
                 Interactable = interactObj;
                 _playerController.SetCrosshairColor(Color.green);
-                
+
                 if (Input.GetKeyDown(KeyCode.E))
-                { interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint); }
+                {
+                    interactObj.InteractStart(hitInfo.collider.gameObject, lookPoint);
+                }
             }
             else if (hitInfo.collider.tag == "Target" ||hitInfo.collider.GetComponent<WoodBreak>())
             {
