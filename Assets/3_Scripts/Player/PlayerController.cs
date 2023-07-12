@@ -11,7 +11,8 @@ namespace Player
 {
     public class PlayerController : AbstractSingleton<PlayerController>, IHealth
     {
-        [Header("Control")] public Camera PlayerCam;
+        [Header("Control")] public PlayerManager PlayerManager;
+        public Camera PlayerCam;
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
         [SerializeField] private TimeHandler _timeHandler;
@@ -185,6 +186,7 @@ namespace Player
             alive = false;
             deadVolume.enabled = true;
             deadVolume.weight = 0.0f;
+            _character.UnlockCursor();
             DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 1, 1.5f)
                 .SetEase(Ease.Linear).OnComplete(delegate { UIManager.Instance.Show<LosePanel>(); });
         }

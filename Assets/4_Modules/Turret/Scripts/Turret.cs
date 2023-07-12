@@ -37,10 +37,8 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        
         Quaternion rotation = Quaternion.LookRotation(PlayerTransform.position - muzzleSocket.position);
         GameObject projectile = Instantiate(prefabProjectile, muzzleSocket.position, rotation);
-        Debug.Log("owe " + projectile);
         projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * 200;  
     }
 }
