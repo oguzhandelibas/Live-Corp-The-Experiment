@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PortalModule
@@ -9,7 +10,7 @@ namespace PortalModule
         public event UnityAction OnRenderTextureChanged;
         
         [Header("Cameras")]
-        [SerializeField] private Camera playerCamera;
+        private Camera playerCamera;
         [SerializeField] private Camera portalViewCamera;
         [Header("View Quality")]
         [SerializeField] private PortalViewResolution portalViewResolution = PortalViewResolution.High;
@@ -38,6 +39,7 @@ namespace PortalModule
 
         private void Start()
         {
+            playerCamera = PlayerController.Instance.PlayerCam;
             if (portalViewCamera.transform.parent != portalRoot2)
             {
                 Debug.LogErrorFormat("portalViewCamera {0} must be child of portalRoot2 {1}", portalViewCamera.name, portalRoot2.name);

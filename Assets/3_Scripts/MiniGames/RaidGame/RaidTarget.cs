@@ -12,14 +12,13 @@ namespace MiniGame.RaidGame
     
         public void TakeHit()
         {
-            StartCoroutine(HitRoutine());
+            _raidControl.FinishSlowMotionGame();
         }
-
         IEnumerator HitRoutine()
         {
             transform.DOLocalRotate(new Vector3(0, 0, -90), 1);
             yield return new WaitForSeconds(1);
-            _raidControl.FinishSlowMotionGame();
+            
             
         }
     }

@@ -8,7 +8,7 @@ public class ActivatePortalAfterDestruct : MonoBehaviour
     
     public void Activate()
     {
-        AudioManager.Instance.AddAudioClip(4);
+        AudioManager.Instance.AddAudioClip(new int[1]{4});
         _activatePortal.Activate();
     }
 }

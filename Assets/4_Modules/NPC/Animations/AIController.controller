@@ -141,6 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e627371ab3b4449bc1749db3b35b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleSocket: {fileID: 0}
+  prefabProjectile: {fileID: 0}
+  projectileImpulse: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 0}
 --- !u!1101 &-3213445857088390412
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -259,31 +266,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: WALK
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: RUN
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SHOOT
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Blend
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -477,6 +484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e627371ab3b4449bc1749db3b35b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleSocket: {fileID: 0}
+  prefabProjectile: {fileID: 0}
+  projectileImpulse: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 0}
 --- !u!1102 &5730743574536380242
 AnimatorState:
   serializedVersion: 6
@@ -561,7 +575,7 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &8578691744734342073

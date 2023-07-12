@@ -19,16 +19,15 @@ public class AudioTrigger : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>() == null) return;
         OnTrigger?.Invoke();
-        foreach (var item in AudioIndex)
-        {
-            AudioManager.Instance.AddAudioClip(this, item);
-        }
-        AudioManager.Instance.PlayAudioClip(audioManagerPosition, AudioIndex[0]);
+        AudioManager.Instance.AddAudioClip(this, AudioIndex);
+        AudioManager.Instance.SetSpeakerPosition(audioManagerPosition);
+        //AudioManager.Instance.PlayAudioClip(AudioIndex[0]);
         boxCollider.enabled = false;
     }
 
     public void InvokeEvent()
     {
+        Debug.Log("After Sound");
         TriggerEvent.Invoke();
     }
 }

@@ -23,30 +23,30 @@ public class AudioManager : AbstractSingleton<AudioManager>
     private int totalSoundCount = 0;
     private AudioTrigger audioTrigger;
     
-    public void AddAudioClip(AudioTrigger _audioTrigger, int index = -1)
+    public void AddAudioClip(AudioTrigger _audioTrigger, int[] indexes)
     {
         audioTrigger = _audioTrigger;
-        if (index >= 0)
+        foreach (var item in indexes)
         {
-            PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
+            PlayList.Add(new PlayList(item, AudioDatas.AudioClips[item]));
         }
 
-        totalSoundCount = PlayList.Count;
+        PlayAudioClip(indexes[0]);
     }
 
-    public void AddAudioClip(int index = -1)
+    public void AddAudioClip(int[] indexes)
     {
-        if (index >= 0)
+        foreach (var item in indexes)
         {
-            PlayList.Add(new PlayList(index, AudioDatas.AudioClips[index]));
+            PlayList.Add(new PlayList(item, AudioDatas.AudioClips[item]));
         }
-        totalSoundCount = PlayList.Count;
+        
+        PlayAudioClip(indexes[0]);
+    }
 
-        if (!audioSource.isPlaying)
-        {
-            Play(PlayList[0].audioClip, PlayList[0].Index);
-            PlayList.RemoveAt(0);
-        }
+    public void SetSpeakerPosition(Transform target)
+    {
+        transform.position = target.position;
     }
     
     /// <summary>
@@ -54,12 +54,14 @@ public class AudioManager : AbstractSingleton<AudioManager>
     /// </summary>
     /// <param name="index"></param>
     /// <returns>Wait Time</returns>
-    public float PlayAudioClip(Transform target, int index = -1)
+    public float PlayAudioClip(int index = -1)
     {
+        if (audioSource.isPlaying) return 0;
+        totalSoundCount = PlayList.Count;
+        
         if (index >= 0)
         {
             CheckPlayList();
-            transform.position = target.position;
         }
         else
         {
@@ -67,18 +69,10 @@ public class AudioManager : AbstractSingleton<AudioManager>
             PlayList.RemoveAt(0);
         }
         
+        totalSoundCount = PlayList.Count;
         return audioSource.clip.length;
     }
-
-    private void Play(AudioClip clip, int index)
-    {
-        audioSource.clip = clip;
-        audioSource.Play();
-        bool lastSound = (totalSoundCount-1 == PlayList[0].Index) || PlayList.Count <= 1;
-        SubtitleManager.Instance.SetSubText(audioTrigger, AudioDatas.AudioText[index], audioSource.clip.length, lastSound);
-        Invoke("CheckPlayList", audioSource.clip.length);
-    }
-
+    
     private void CheckPlayList()
     {
         if (PlayList.Count > 0)
@@ -87,4 +81,18 @@ public class AudioManager : AbstractSingleton<AudioManager>
             PlayList.RemoveAt(0);
         }
     }
+
+    private void Play(AudioClip clip, int index)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+        bool lastSound = PlayList.Count <= 1;
+        //(totalSoundCount-1 == PlayList[0].Index) || 
+        Debug.Log("2: " + (PlayList.Count <= 1));
+        
+        SubtitleManager.Instance.SetSubText(audioTrigger, AudioDatas.AudioText[index], audioSource.clip.length, lastSound);
+        Invoke("CheckPlayList", audioSource.clip.length);
+    }
+
+    
 }

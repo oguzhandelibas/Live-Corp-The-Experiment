@@ -7,7 +7,6 @@ namespace Player
 {
     public class PlayerPhysicController : MonoBehaviour
     {
-        [SerializeField] private PlayerController _playerController;
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out YesYesController yesController))
@@ -16,12 +15,12 @@ namespace Player
             }
             if (other.TryGetComponent(out MG_Controller mgController) && !mgController.HasTrigger)
             {
-                _playerController.Lock(mgController.transform, true);
+                PlayerController.Instance.Lock(mgController.transform, true);
                 mgController.StartPathRoutine();
             }
             if (other.TryGetComponent(out RaidControl raidControl) && !raidControl.HasStarted)
             {
-                raidControl.StartSlowMotionGame(_playerController);
+                raidControl.StartSlowMotionGame(PlayerController.Instance);
             }
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Turret : AbstractSingleton<Turret>
+public class Turret : MonoBehaviour
 {
     [Header("Self Parameters")]
     [SerializeField] private Transform TurretHead;
@@ -13,6 +13,7 @@ public class Turret : AbstractSingleton<Turret>
     
     private void Start()
     {
+        Debug.Log("burdaa yım");
         if (PlayerTransform == null) PlayerTransform = GameObject.FindWithTag("Player").transform;
     }
 

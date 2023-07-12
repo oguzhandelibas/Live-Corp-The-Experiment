@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class InteractionToItem : MonoBehaviour
 {
-    [SerializeField] private PlayerController _playerController;
     [SerializeField] private Transform lookPoint;
     [SerializeField] private float InteractRange;
 
@@ -29,7 +28,7 @@ public class InteractionToItem : MonoBehaviour
             if (Interactable==null && hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 Interactable = interactObj;
-                _playerController.SetCrosshairColor(Color.green);
+                PlayerController.Instance.SetCrosshairColor(Color.green);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -38,16 +37,16 @@ public class InteractionToItem : MonoBehaviour
             }
             else if (hitInfo.collider.tag == "Target" ||hitInfo.collider.GetComponent<WoodBreak>())
             {
-                _playerController.SetCrosshairColor(Color.red);
+                PlayerController.Instance.SetCrosshairColor(Color.red);
             }
             else
             {
-                _playerController.SetCrosshairColor(Color.white);
+                PlayerController.Instance.SetCrosshairColor(Color.white);
             }
         }
         else
         {
-            _playerController.SetCrosshairColor(Color.white);
+            PlayerController.Instance.SetCrosshairColor(Color.white);
         }
         
         if (Interactable != null)

@@ -11,6 +11,7 @@ namespace NPC
 
         private void Start()
         {
+            Debug.Log((float)characterType);
             animator.SetFloat("Blend", (float)characterType);
         }
 

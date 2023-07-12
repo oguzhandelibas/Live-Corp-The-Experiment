@@ -14,14 +14,14 @@ public class ActivatePortal : MonoBehaviour
     public void Activate()
     {
         Debug.Log("Activated");
-        Vector3 targetPos = portal.transform.position + (Vector3.up*3);
+        Vector3 targetPos = portal.transform.localPosition + (Vector3.up*3);
         portal.transform.DOLocalMove(targetPos, 1);
     }
 
     public void Deactivate()
     {
         Debug.Log("Deactivated");
-        Vector3 targetPos = portal.transform.position + (Vector3.down*3);
+        Vector3 targetPos = portal.transform.localPosition + (Vector3.down*3);
         portal.transform.DOLocalMove(targetPos, 1);
     }
 }

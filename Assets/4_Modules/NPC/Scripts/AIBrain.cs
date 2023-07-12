@@ -12,7 +12,7 @@ namespace NPC
 
         [SerializeField] private Transform[] wayPoints;
         [SerializeField] private  Transform player;
-        private int health = 100;
+        public int health = 100;
         private bool alive;
         NavMeshAgent agent;
         Animator animator;
@@ -29,7 +29,7 @@ namespace NPC
 
         void Update()
         {
-            if(alive) currentState = currentState.Process();
+            if(alive && _animationControl.characterType == CharacterType.SOLIDER) currentState = currentState.Process();
         }
         
 

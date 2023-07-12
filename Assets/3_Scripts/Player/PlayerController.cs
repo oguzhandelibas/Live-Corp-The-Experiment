@@ -10,6 +10,7 @@ namespace Player
 {
     public class PlayerController : AbstractSingleton<PlayerController>, IHealth
     {
+        [Header("Control")] public Camera PlayerCam;
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
         [SerializeField] private TimeHandler _timeHandler;
@@ -22,6 +23,7 @@ namespace Player
         [SerializeField] private GameObject TutorialPanel;
         [SerializeField] private GameObject MovementIndicator;
         [SerializeField] private GameObject CollectIndicator;
+        [SerializeField] private GameObject TimerIndicator;
         
         private int Health;
         private bool alive;
@@ -45,8 +47,6 @@ namespace Player
                 item.transform.localScale = Vector3.zero;
                 item.gameObject.SetActive(false);
             }
-            
-            WakeUp();
         }
 
         #region GUN
@@ -121,7 +121,9 @@ namespace Player
         }
 
         #endregion
-        
+
+        #region DAMAGE SYSTEM
+
         public void TakeDamage(Vector3 hitPos)
         {
             if(!alive) return;
@@ -142,16 +144,7 @@ namespace Player
                 item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
             }
         }
-        public void WakeUp()
-        {
-            Crosshair.gameObject.SetActive(false);
-            alive = true;
-            deadVolume.enabled = true;
-            deadVolume.weight = 1.0f;
-            DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 0, 2.5f)
-                .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.gameObject.SetActive(true); });
-            
-        }
+        
         public void Death()
         {
             SetSlowMotion();
@@ -163,6 +156,20 @@ namespace Player
             DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 1, 1.5f)
                 .SetEase(Ease.Linear).OnComplete(delegate { UIManager.Instance.Show<LosePanel>(); });
         }
+
+        #endregion
+        
+        public void WakeUp()
+        {
+            Crosshair.gameObject.SetActive(false);
+            alive = true;
+            deadVolume.enabled = true;
+            deadVolume.weight = 1.0f;
+            DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 0, 2.5f)
+                .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.gameObject.SetActive(true); });
+            
+        }
+        
     }
 }
 

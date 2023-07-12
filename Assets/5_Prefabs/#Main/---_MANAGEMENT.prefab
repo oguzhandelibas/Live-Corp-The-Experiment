@@ -3281,7 +3281,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: -400, y: 150}
+  m_SizeDelta: {x: -840, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8738202738279754471
 CanvasRenderer:
@@ -3311,8 +3311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good morning, Subject U68. You are on the last day of the Live Corp tests.
-    The promised payment will be transferred to your account at the end of the day.
+  m_text: ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ccd8b166fb5ec044380ed190147d94d1, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: ccd8b166fb5ec044380ed190147d94d1, type: 2}
