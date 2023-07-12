@@ -88,8 +88,7 @@ public class AudioManager : AbstractSingleton<AudioManager>
         audioSource.Play();
         bool lastSound = PlayList.Count <= 1;
         //(totalSoundCount-1 == PlayList[0].Index) || 
-        Debug.Log("2: " + (PlayList.Count <= 1));
-        
+
         SubtitleManager.Instance.SetSubText(audioTrigger, AudioDatas.AudioText[index], audioSource.clip.length, lastSound);
         Invoke("CheckPlayList", audioSource.clip.length);
     }

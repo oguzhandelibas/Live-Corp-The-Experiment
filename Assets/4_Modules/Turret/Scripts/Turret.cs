@@ -13,7 +13,6 @@ public class Turret : MonoBehaviour
     
     private void Start()
     {
-        Debug.Log("burdaa yım");
         if (PlayerTransform == null) PlayerTransform = GameObject.FindWithTag("Player").transform;
     }
 

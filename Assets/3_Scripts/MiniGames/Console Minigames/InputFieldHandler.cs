@@ -1,3 +1,5 @@
+using System;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -13,20 +15,29 @@ public class InputFieldHandler : MonoBehaviour
         m_TextMeshProUGUI.onEndEdit.AddListener(OnEndEdit);
     }
 
+    private void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            m_TextMeshProUGUI.interactable = true;
+            m_TextMeshProUGUI.Select();
+        }
+    }
+
     private void OnEndEdit(string value)
     {
         if (consoleData.HasContain(value))
         {
             Debug.Log("Hack command found!");
-            // İstenilen işlemleri burada yapabilirsiniz.
+            PlayerController.Instance.ConsolePanelActiveness(false);
         }
         else
         {
             Debug.Log("Hack command not found!");
         }
-
-        // Input Field'ı temizleme
+        
         m_TextMeshProUGUI.text = "";
         EventSystem.current.SetSelectedGameObject(m_TextMeshProUGUI.gameObject);
+        PlayerController.Instance.ConsolePanelActiveness(false);
     }
 }

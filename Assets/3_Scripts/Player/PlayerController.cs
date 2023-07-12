@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using InfimaGames.LowPolyShooterPack;
 using NPC;
@@ -24,6 +25,7 @@ namespace Player
         [SerializeField] private GameObject MovementIndicator;
         [SerializeField] private GameObject CollectIndicator;
         [SerializeField] private GameObject TimerIndicator;
+        [SerializeField] private GameObject ConsolePanel;
         
         private int Health;
         private bool alive;
@@ -40,7 +42,8 @@ namespace Player
             TutorialMovementActiveness(false);
             TutorialCollectActiveness(false);
             TimerPanelActiveness(false);
-
+            ConsolePanelActiveness(false);
+            
             Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
@@ -49,6 +52,14 @@ namespace Player
             {
                 item.transform.localScale = Vector3.zero;
                 item.gameObject.SetActive(false);
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                ConsolePanelActiveness(!ConsolePanel.activeSelf);
             }
         }
 
@@ -124,10 +135,15 @@ namespace Player
         }
 
         public void TimerPanelActiveness(bool timer)
-        {Debug.Log("halaolaoool");
+        {
             TimerIndicator.SetActive(timer);
         }
-
+        
+        public void ConsolePanelActiveness(bool console)
+        {
+            ConsolePanel.SetActive(console);
+        }
+        
         #endregion
 
         #region DAMAGE SYSTEM
