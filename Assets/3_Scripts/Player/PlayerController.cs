@@ -48,11 +48,7 @@ namespace Player
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
             deadVolume.enabled = false;
-            foreach (var item in hitSens)
-            {
-                item.transform.localScale = Vector3.zero;
-                item.gameObject.SetActive(false);
-            }
+            ResetHitSens();
         }
 
         private void Update()
@@ -165,7 +161,19 @@ namespace Player
             {
                 item.transform.localScale = Vector3.zero;
                 item.gameObject.SetActive(true);
-                item.DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { item.gameObject.SetActive(false); });
+                item.DOScale(new Vector3(1, 1, 1), 0.3f);
+                Debug.Log("a");
+            }
+            Debug.Log("b");
+            ResetHitSens();
+        }
+
+        public void ResetHitSens()
+        {
+            foreach (var item in hitSens)
+            {
+                item.transform.localScale = Vector3.zero;
+                item.gameObject.SetActive(false);
             }
         }
         

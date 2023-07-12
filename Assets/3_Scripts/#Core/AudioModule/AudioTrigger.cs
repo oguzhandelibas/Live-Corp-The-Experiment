@@ -27,7 +27,6 @@ public class AudioTrigger : MonoBehaviour
 
     public void InvokeEvent()
     {
-        Debug.Log("After Sound");
         TriggerEvent.Invoke();
     }
 }

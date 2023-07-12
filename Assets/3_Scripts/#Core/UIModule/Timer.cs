@@ -22,6 +22,13 @@ public class Timer : MonoBehaviour
         _timerEventHandler = timerEventHandler;
     }
 
+    public void ResetTimer()
+    {
+        timeDone = false;
+        totalTime = 10;
+        currentTime = totalTime;
+    }
+
     private void Update()
     {
         if(timeDone) return;

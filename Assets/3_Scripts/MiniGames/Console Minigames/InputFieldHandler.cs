@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.Events;
 
 public class InputFieldHandler : MonoBehaviour
 {
+    public UnityEvent OnConsoleHack;
     [SerializeField] private TMP_InputField m_TextMeshProUGUI;
     [SerializeField] private ConsoleData consoleData;
-
+        
     private void Start()
     {
         m_TextMeshProUGUI.onEndEdit.AddListener(OnEndEdit);
@@ -28,6 +30,10 @@ public class InputFieldHandler : MonoBehaviour
     {
         if (consoleData.HasContain(value))
         {
+            if (value == consoleData.HackCommandContent(0))
+            {
+                OnConsoleHack?.Invoke();
+            }
             Debug.Log("Hack command found!");
             PlayerController.Instance.ConsolePanelActiveness(false);
         }
