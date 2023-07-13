@@ -816,6 +816,11 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		public void OnMove(InputAction.CallbackContext context)
 		{
+			if (!cursorLocked || PlayerController.Instance.onConsole)
+			{
+				axisMovement = Vector2.zero;
+				return;
+			}
 			//Read.
 			axisMovement = cursorLocked ? context.ReadValue<Vector2>() : default;
 		}
@@ -824,6 +829,11 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		public void OnLook(InputAction.CallbackContext context)
 		{
+			if (!cursorLocked || PlayerController.Instance.onConsole)
+			{
+				axisLook = Vector2.zero;
+				return;
+			}
 			//Read.
 			axisLook = cursorLocked ? context.ReadValue<Vector2>() : default;
 		}

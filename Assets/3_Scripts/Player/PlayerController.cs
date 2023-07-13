@@ -11,6 +11,8 @@ namespace Player
 {
     public class PlayerController : AbstractSingleton<PlayerController>, IHealth
     {
+        #region FIELDS
+
         [Header("Control")] public PlayerManager PlayerManager;
         public Camera PlayerCam;
         [SerializeField] private Weapon _weapon;
@@ -30,13 +32,21 @@ namespace Player
         [SerializeField] private GameObject ConsolePanel;
         [SerializeField] private GameObject MentalHealthPanel;
         [SerializeField] private GameObject StatusPanel;
-        
+
+        #endregion
+
+        #region PROPERTIES & VARIABLES
+
         private int Health;
         private bool alive;
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
         public bool onConsole;
+
+        #endregion
+
+        #region UNITY METHODS
 
         private void Start()
         {
@@ -56,9 +66,9 @@ namespace Player
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
             deadVolume.enabled = false;
-            ResetHitSens();
+            ResetHitSens(0);
+            ResetHitSens(1);
             
-            Debug.Log(_character.IsCursorLocked());
         }
 
         private void Update()
@@ -69,6 +79,9 @@ namespace Player
             }
         }
 
+
+        #endregion
+        
         #region GUN
 
         public void SetGun()
@@ -183,22 +196,22 @@ namespace Player
         }
         public void GiveDamage()
         {
-            foreach (var item in hitSens)
-            {
-                item.transform.localScale = Vector3.zero;
-                item.gameObject.SetActive(true);
-                item.DOScale(new Vector3(1, 1, 1), 0.3f);
-            }
-            ResetHitSens();
+            hitSens[0].transform.localScale = Vector3.zero;
+            hitSens[0].gameObject.SetActive(true);
+            hitSens[0].DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { ResetHitSens(0); });
+            
+            hitSens[1].transform.localScale = Vector3.zero;
+            hitSens[1].gameObject.SetActive(true);
+            hitSens[1].DOScale(new Vector3(1, 1, 1), 0.3f).OnComplete(delegate { ResetHitSens(1); });
         }
 
-        public void ResetHitSens()
+        public void ResetHitSens(int index)
         {
-            foreach (var item in hitSens)
-            {
-                item.transform.localScale = Vector3.zero;
-                item.gameObject.SetActive(false);
-            }
+            hitSens[0].transform.localScale = Vector3.zero;
+            hitSens[0].gameObject.SetActive(false);
+            
+            hitSens[1].transform.localScale = Vector3.zero;
+            hitSens[1].gameObject.SetActive(false);
         }
         
         public void Death()

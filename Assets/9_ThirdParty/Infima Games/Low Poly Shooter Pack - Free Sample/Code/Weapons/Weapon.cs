@@ -259,8 +259,11 @@ namespace InfimaGames.LowPolyShooterPack
             if (Physics.Raycast(new Ray(playerCamera.position, playerCamera.forward),
                     out RaycastHit hit, maximumDistance, mask))
             {
-                if(hit.transform.GetComponent<AIBrain>())
+                if (hit.transform.GetComponent<AIBrain>())
+                {
                     PlayerController.Instance.GiveDamage();
+                }
+                    
                 rotation = Quaternion.LookRotation(hit.point - muzzleSocket.position);
             }
                 
