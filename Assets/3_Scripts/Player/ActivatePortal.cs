@@ -13,15 +13,15 @@ public class ActivatePortal : MonoBehaviour
 
     public void Activate()
     {
-        gameObject.SetActive(true);
+        portal.gameObject.SetActive(true);
         Vector3 targetPos = portal.transform.localPosition + (Vector3.up*3);
-        portal.transform.DOLocalMove(targetPos, 1);
+        portal.transform.DOLocalMove(targetPos, 0.5f);
     }
 
     public void Deactivate()
     {
-        gameObject.SetActive(false);
+        portal.gameObject.SetActive(false);
         Vector3 targetPos = portal.transform.localPosition + (Vector3.down*3);
-        portal.transform.DOLocalMove(targetPos, 1);
+        portal.transform.DOLocalMove(targetPos, 0.5f);
     }
 }

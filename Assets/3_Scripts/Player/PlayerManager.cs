@@ -13,7 +13,7 @@ namespace Player
 
         public void SetPositionIndex(int index)
         {
-            if(index == 0) _playerController.WakeUp();
+            
             Index = index;
         }
     
@@ -23,11 +23,12 @@ namespace Player
             Time.timeScale = 1.0f;
             Player.position = Positions[Index].position;
             Player.localRotation = Positions[Index].localRotation;
+            if(Index == 0) _playerController.WakeUp();
         }
 
         private void Awake()
         {
-            SetPositionIndex(5);
+            SetPositionIndex(2);
             SpawnPlayerCharacter();
         }
 

@@ -33,7 +33,7 @@ public class SubtitleManager : AbstractSingleton<SubtitleManager>
         
         if (lastSound)
         {
-            audioTrigger.InvokeEvent();
+            if(audioTrigger!= null) audioTrigger.InvokeEvent();
             SetSubtitleActiveness(false, 0.25f);    
         }
         

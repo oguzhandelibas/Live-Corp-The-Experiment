@@ -40,7 +40,7 @@ public class AudioManager : AbstractSingleton<AudioManager>
         {
             PlayList.Add(new PlayList(item, AudioDatas.AudioClips[item]));
         }
-        
+        audioTrigger = null;   
         PlayAudioClip(indexes[0]);
     }
 

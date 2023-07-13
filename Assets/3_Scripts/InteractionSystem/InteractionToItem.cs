@@ -16,6 +16,8 @@ public class InteractionToItem : MonoBehaviour
     private IInteractable Interactable;
     private void Update()
     {
+        if(PlayerController.Instance.onConsole) return;
+        
         r = new Ray(lookPoint.transform.position, lookPoint.transform.forward * InteractRange);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {

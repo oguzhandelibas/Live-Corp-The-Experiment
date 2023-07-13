@@ -81,9 +81,9 @@ namespace MiniGame.YesYes
 
         public void ActivateGunPanel()
         {
+            DeactivateChoosePlatform();
             AudioManager.Instance.AddAudioClip(new int[2]{16,17});
             gunPlatform.gameObject.SetActive(true);
-            DeactivateChoosePlatform();
             Vector3 gunPlatformTargetPos = new Vector3(0.0f, 1.0f, 0.0f);
             gunPlatform.DOLocalMove(gunPlatformTargetPos, 1.0f).SetEase(Ease.Linear);
         }
