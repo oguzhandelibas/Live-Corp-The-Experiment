@@ -13,6 +13,7 @@ namespace Player
     {
         [Header("Control")] public PlayerManager PlayerManager;
         public Camera PlayerCam;
+        [SerializeField] private Weapon _weapon;
         [SerializeField] private Character _character;
         [SerializeField] private CameraLook _cameraLook;
         [SerializeField] private TimeHandler _timeHandler;
@@ -66,6 +67,11 @@ namespace Player
         {
             _character.HolsterIssue();
             ammoIndicatorObject.SetActive(true);
+        }
+
+        public void TakeAmmunation(int count)
+        {
+            _weapon.SetBackupAmmunition(count);
         }
 
         #endregion

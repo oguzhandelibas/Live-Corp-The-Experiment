@@ -75,6 +75,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         public abstract int GetBackupAmmunition();
 
+        public abstract void SetBackupAmmunition(int count);
+
         /// <summary>
         /// Returns the Weapon's Animator component.
         /// </summary>

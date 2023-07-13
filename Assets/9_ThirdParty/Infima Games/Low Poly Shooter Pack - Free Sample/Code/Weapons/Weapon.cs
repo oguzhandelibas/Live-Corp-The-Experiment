@@ -195,7 +195,13 @@ namespace InfimaGames.LowPolyShooterPack
             if (backup < 0) backup = 0;
             return backup;
         }
-        
+
+        public override void SetBackupAmmunition(int count)
+        {
+            ammunationCount += count;
+            magazineBehaviour.SetAmmunition(-count);
+        }
+
         public override bool HasMagazine() => magazineBehaviour.GetMagazine() > 0;
         public override bool HasAmmunition() => magazineBehaviour.GetAmmunition() > 0;
 
