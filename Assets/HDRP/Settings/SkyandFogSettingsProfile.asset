@@ -289,10 +289,10 @@ MonoBehaviour:
     m_Value: 4
   cloudType:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   skyAmbientMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   windOrientation:
     m_OverrideState: 0
     m_Value: 0
@@ -546,10 +546,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -0.6
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2.52
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
