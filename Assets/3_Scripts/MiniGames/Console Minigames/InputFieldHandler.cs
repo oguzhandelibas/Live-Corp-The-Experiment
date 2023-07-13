@@ -33,6 +33,7 @@ public class InputFieldHandler : MonoBehaviour
             if (value == consoleData.HackCommandContent(0))
             {
                 OnConsoleHack?.Invoke();
+                AudioManager.Instance.AddAudioClip(new int[2]{21,22});
             }
             Debug.Log("Hack command found!");
             PlayerController.Instance.ConsolePanelActiveness(false);

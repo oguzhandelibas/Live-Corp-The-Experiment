@@ -3,6 +3,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using Player;
 using UnityEngine.InputSystem;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -575,8 +576,9 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		public void OnTryFire(InputAction.CallbackContext context)
 		{
+			
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 
 			//Switch.
@@ -618,6 +620,9 @@ namespace InfimaGames.LowPolyShooterPack
 		
 		public void OnTryJump(InputAction.CallbackContext context)
 		{
+			if (!cursorLocked || PlayerController.Instance.onConsole)
+				return;
+			
 			switch (context)
 			{
 				//Started.
@@ -637,7 +642,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryPlayReload(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 			
 			//Block.
@@ -661,7 +666,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryInspect(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 			
 			//Block.
@@ -684,7 +689,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryAiming(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 
 			//Switch.
@@ -707,7 +712,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryHolster(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 			
 			//Switch.
@@ -739,7 +744,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryRun(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 			
 			//Switch.
@@ -763,7 +768,7 @@ namespace InfimaGames.LowPolyShooterPack
 		public void OnTryInventoryNext(InputAction.CallbackContext context)
 		{
 			//Block while the cursor is unlocked.
-			if (!cursorLocked)
+			if (!cursorLocked || PlayerController.Instance.onConsole)
 				return;
 			
 			//Null Check.

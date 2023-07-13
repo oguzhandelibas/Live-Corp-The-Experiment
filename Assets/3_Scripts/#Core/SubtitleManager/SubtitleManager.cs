@@ -11,7 +11,13 @@ public class SubtitleManager : AbstractSingleton<SubtitleManager>
     {
         StartCoroutine(ShowText(audioTrigger, subText, time, lastSound));
     }
-    
+
+    public void ResetSubtitle()
+    {
+        StopAllCoroutines();
+        SetSubtitleActiveness(false, 0.0f);  
+    }
+
     private IEnumerator ShowText(AudioTrigger audioTrigger, string fullText, float time, bool lastSound)
     {
         SubtitleText.gameObject.SetActive(true);

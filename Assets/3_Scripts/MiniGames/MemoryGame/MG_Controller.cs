@@ -40,8 +40,10 @@ namespace MiniGame.MemoryGame
         public bool HasTrigger { get; set; }
 
         [Header("Event")] 
+        public UnityEvent OnStart;
         public UnityEvent OnSuccess;
         public UnityEvent OnFail;
+        public UnityEvent OnEnd;
 
         private void Start()
         {
@@ -50,6 +52,7 @@ namespace MiniGame.MemoryGame
 
         public void StartPathRoutine()
         {
+            OnStart?.Invoke();
             HasTrigger = true;
             StartCoroutine(ShowPathRoutine(1.0f));
         }
@@ -112,6 +115,7 @@ namespace MiniGame.MemoryGame
             else
             {
                 OnSuccess?.Invoke();
+                OnEnd?.Invoke();
                 PlayerController.Instance.UnlockMovement();
             }
         }
@@ -121,6 +125,7 @@ namespace MiniGame.MemoryGame
             Fail = true;
             Outputs[SuccessCount].material = OutputWrongMaterial;
             OnFail?.Invoke();
+            OnEnd?.Invoke();
         }
         
         private void SetColor(MeshRenderer mR, Material m, float inTime)

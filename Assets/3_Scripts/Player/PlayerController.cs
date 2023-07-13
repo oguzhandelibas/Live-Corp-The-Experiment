@@ -28,29 +28,37 @@ namespace Player
         [SerializeField] private GameObject CollectIndicator;
         [SerializeField] private GameObject TimerIndicator;
         [SerializeField] private GameObject ConsolePanel;
+        [SerializeField] private GameObject MentalHealthPanel;
+        [SerializeField] private GameObject StatusPanel;
         
         private int Health;
         private bool alive;
         private bool canMove;
         public bool CanMove { get => canMove; set => canMove = value; }
         [SerializeField] private GameObject ammoIndicatorObject;
+        public bool onConsole;
 
         private void Start()
         {
             alive = true;
             Health = 100;
+            onConsole = false;
             
             TutorialPanelActiveness(false);
             TutorialMovementActiveness(false);
             TutorialCollectActiveness(false);
             TimerPanelActiveness(false);
             ConsolePanelActiveness(false);
+            StatusPanelActiveness(false);
+            MentalHealthPanelActiveness(false);
             
             Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
             takeDamageVolume.enabled = false;
             deadVolume.enabled = false;
             ResetHitSens();
+            
+            Debug.Log(_character.IsCursorLocked());
         }
 
         private void Update()
@@ -144,7 +152,18 @@ namespace Player
         
         public void ConsolePanelActiveness(bool console)
         {
+            onConsole = console;
             ConsolePanel.SetActive(console);
+        }
+        
+        public void MentalHealthPanelActiveness(bool mentalH)
+        {
+            MentalHealthPanel.SetActive(mentalH);
+        }
+        
+        public void StatusPanelActiveness(bool status)
+        {
+            StatusPanel.SetActive(status);
         }
         
         #endregion
@@ -169,9 +188,7 @@ namespace Player
                 item.transform.localScale = Vector3.zero;
                 item.gameObject.SetActive(true);
                 item.DOScale(new Vector3(1, 1, 1), 0.3f);
-                Debug.Log("a");
             }
-            Debug.Log("b");
             ResetHitSens();
         }
 
@@ -206,7 +223,7 @@ namespace Player
             deadVolume.enabled = true;
             deadVolume.weight = 1.0f;
             DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 0, 2.5f)
-                .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.gameObject.SetActive(true); });
+                .SetEase(Ease.Linear).OnComplete(delegate { Crosshair.transform.gameObject.SetActive(true); });
             
         }
         

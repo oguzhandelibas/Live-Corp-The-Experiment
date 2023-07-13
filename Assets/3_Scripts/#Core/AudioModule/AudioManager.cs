@@ -93,5 +93,10 @@ public class AudioManager : AbstractSingleton<AudioManager>
         Invoke("CheckPlayList", audioSource.clip.length);
     }
 
-    
+    public void ResetSound()
+    {
+        SubtitleManager.Instance.ResetSubtitle();
+        PlayList.Clear();
+        audioSource.Stop();
+    }
 }
