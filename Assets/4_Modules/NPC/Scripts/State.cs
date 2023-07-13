@@ -30,7 +30,7 @@ namespace NPC
         protected State nextState;
         protected NavMeshAgent agent;
 
-        float visDist = 5.0f;
+        float visDist = 15.0f;
         float visAngle = 55.0f;
         float shootDist = 10.0f;
 
