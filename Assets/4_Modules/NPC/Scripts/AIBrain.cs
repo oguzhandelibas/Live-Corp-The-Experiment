@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Leadboard;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
@@ -51,7 +52,7 @@ namespace NPC
             if (isManager)
             {
                 UIManager.Instance.Show<LosePanel>();
-                PlayerController.Instance.LockOnly(transform);
+                PlayerController.Instance.Death();
             }
             GetComponent<CapsuleCollider>().enabled = false;
             alive = false;

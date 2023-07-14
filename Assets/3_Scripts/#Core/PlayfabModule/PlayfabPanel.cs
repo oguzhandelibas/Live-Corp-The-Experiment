@@ -11,6 +11,11 @@ namespace Leadboard
             playfabManager.SendLeaderboard(2);
         }
 
+        public void _MainMenu()
+        {
+            UIManager.Instance.Show<MainMenuPanel>();
+        }
+
         public void _GetLeaderboard()
         {
             playfabManager.GetLeaderboard();

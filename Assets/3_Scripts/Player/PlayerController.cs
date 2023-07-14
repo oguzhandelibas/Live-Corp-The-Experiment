@@ -56,13 +56,7 @@ namespace Player
             Health = 100;
             onConsole = false;
             
-            TutorialPanelActiveness(false);
-            TutorialMovementActiveness(false);
-            TutorialCollectActiveness(false);
-            TimerPanelActiveness(false);
-            ConsolePanelActiveness(false);
-            StatusPanelActiveness(false);
-            MentalHealthPanelActiveness(false);
+            HideUI();
             
             Crosshair.gameObject.SetActive(true);
             ammoIndicatorObject.SetActive(false);
@@ -114,9 +108,11 @@ namespace Player
 
         public void LockOnly(Transform target)
         {
+            onConsole = true;
             _character.isFreeze = true;
             _cameraLook.isFreeze = true;
             transform.DORotateQuaternion(Quaternion.Euler(0, target.eulerAngles.y, 0), 0.5f);
+            onConsole = false;
         }
 
         public void UnlockRotation()
@@ -228,6 +224,7 @@ namespace Player
         
         public void Death()
         {
+            HideUI();
             SetSlowMotion();
             Lock(transform,false);
             Crosshair.gameObject.SetActive(false);
@@ -239,6 +236,16 @@ namespace Player
                 .SetEase(Ease.Linear).OnComplete(delegate { UIManager.Instance.Show<LosePanel>(); });
         }
 
+        private void HideUI()
+        {
+            TutorialPanelActiveness(false);
+            TutorialMovementActiveness(false);
+            TutorialCollectActiveness(false);
+            TimerPanelActiveness(false);
+            ConsolePanelActiveness(false);
+            StatusPanelActiveness(false);
+            MentalHealthPanelActiveness(false);
+        }
         #endregion
         
         public void WakeUp()

@@ -8,7 +8,7 @@ public class UIManager : AbstractSingleton<UIManager>
     {
         Debug.Log(tipType.ToString() + " " + activeness);
     }
-    
+
     [SerializeField]
         Canvas m_Canvas;
         [SerializeField]
