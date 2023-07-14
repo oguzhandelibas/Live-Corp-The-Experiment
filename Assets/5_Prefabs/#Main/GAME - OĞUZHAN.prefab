@@ -39891,7 +39891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7988857883606551886
 Transform:
   m_ObjectHideFlags: 0
@@ -41856,7 +41856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4188871402913760249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 237.6, y: 2.537, z: 11.266703}
+  m_LocalPosition: {x: 237.59999, y: 2.537, z: 11.266703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48542,12 +48542,12 @@ PrefabInstance:
     - target: {fileID: 4618514265540347708, guid: dcc86e57ea526cf4081e21088f07b02e,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618514265951070921, guid: dcc86e57ea526cf4081e21088f07b02e,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4619642889669457369, guid: dcc86e57ea526cf4081e21088f07b02e,
         type: 3}
@@ -53817,7 +53817,7 @@ PrefabInstance:
     - target: {fileID: 467860039611146123, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
       propertyPath: m_Intensity
-      value: 15.915494
+      value: 47.746483
       objectReference: {fileID: 0}
     - target: {fileID: 467860039611146123, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
@@ -53932,7 +53932,7 @@ PrefabInstance:
     - target: {fileID: 1935603111162489424, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
       propertyPath: m_Intensity
-      value: 15.915494
+      value: 47.746483
       objectReference: {fileID: 0}
     - target: {fileID: 1935603111162489424, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
@@ -53972,7 +53972,7 @@ PrefabInstance:
     - target: {fileID: 2601046120971628116, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
       propertyPath: m_Intensity
-      value: 15.915494
+      value: 47.746483
       objectReference: {fileID: 0}
     - target: {fileID: 2601046120971628116, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
@@ -54027,7 +54027,7 @@ PrefabInstance:
     - target: {fileID: 3202783305611349248, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
       propertyPath: m_Intensity
-      value: 15.915494
+      value: 47.746483
       objectReference: {fileID: 0}
     - target: {fileID: 3202783305611349248, guid: 7351a8eedb6c041989349683e3a72dc1,
         type: 3}
