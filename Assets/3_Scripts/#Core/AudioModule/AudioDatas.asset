@@ -61,6 +61,13 @@ MonoBehaviour:
     durumda. "
   - "G\xF6r\xFCld\xFC\u011F\xFC yerde infaz edilecek. Di\u011Fer deneklerin, odalar\u0131ndan
     ayr\u0131lmamalar\u0131 gerekmektedir."
+  - "Demek sonunda beni bulabildin. Neden bu kadar uzun s\xFCrd\xFC?"
+  - "Herneyse, bu s\xFCre de i\u015F g\xF6r\xFCr. Laf\u0131 uzatmay\u0131 sevmem,
+    k\u0131z\u0131n elimizde."
+  - "Sana verece\u011Fimiz g\xF6revi kabul etmezsen ba\u015F\u0131n\u0131za neler
+    gelebilece\u011Fini tahmin ediyorsundur umar\u0131m."
+  - "Her zaman dedi\u011Fim gibi, se\xE7im yapmakta \xF6zg\xFCrs\xFCn. Kabul ediyor
+    musun? HA HA HA"
   AudioClips:
   - {fileID: 8300000, guid: 8f4361704da9fc0408975f4caf0a931e, type: 3}
   - {fileID: 8300000, guid: d574d642cc888954d8b96245dd683c2c, type: 3}
@@ -87,3 +94,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e0bd9df0268156d4a8465d3b91e991de, type: 3}
   - {fileID: 8300000, guid: e5b6ff0d3c6123f4cb4dcb290e2766ac, type: 3}
   - {fileID: 8300000, guid: f9113a3f776bef34c9aad7dea8264878, type: 3}
+  - {fileID: 8300000, guid: d783d8f9a00ae7148ba1d48d52c63436, type: 3}
+  - {fileID: 8300000, guid: 47737d63cfcae224298a047f898191b4, type: 3}
+  - {fileID: 8300000, guid: 33f11e61188929746b7f3b6e9058655b, type: 3}
+  - {fileID: 8300000, guid: f60a03feee0ffa544bcc16d19665fbf1, type: 3}

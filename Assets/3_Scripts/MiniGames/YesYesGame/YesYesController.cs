@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using Player;
 using InfimaGames.LowPolyShooterPack;
+using Leadboard;
 using UnityEngine.Events;
 
 namespace MiniGame.YesYes
@@ -10,7 +11,8 @@ namespace MiniGame.YesYes
     {
         public UnityEvent OnChoose;
         public UnityEvent OnTakeGun;
-
+        public bool withGun = true;
+        
         [Header("Platforms")]
         [SerializeField] private ChoicePlatform yesPlatform;
         [SerializeField] private ChoicePlatform noPlatform;
@@ -83,6 +85,13 @@ namespace MiniGame.YesYes
         public void ActivateGunPanel()
         {
             OnChoose?.Invoke();
+            if (!withGun)
+            {
+                //OYUN BİTTİ
+                UIManager.Instance.Show<PlayfabPanel>();
+                return;
+            }
+
             DeactivateChoosePlatform();
             AudioManager.Instance.AddAudioClip(new int[2]{16,17});
             gunPlatform.gameObject.SetActive(true);

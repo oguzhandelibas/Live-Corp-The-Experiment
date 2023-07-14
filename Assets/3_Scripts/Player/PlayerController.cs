@@ -102,16 +102,21 @@ namespace Player
 
         public void Lock(Transform target, bool unlockAfter = false)
         {
-            _character.isFreeze = true;
-            _cameraLook.isFreeze = true;
             Transform playerPoint = target.GetChild(0);
             transform.position = playerPoint.position;
-            transform.DORotateQuaternion(Quaternion.Euler(0, target.eulerAngles.y, 0), 0.5f);
+            LockOnly(target);
             if (unlockAfter)
                 _cameraLook.transform.DOLocalRotate(new Vector3(target.rotation.x, 0, 0), 0.5f)
                     .OnComplete(UnlockRotation);
             else
                 _cameraLook.transform.DOLocalRotate(new Vector3(target.rotation.x, 0, 0), 0.5f);
+        }
+
+        public void LockOnly(Transform target)
+        {
+            _character.isFreeze = true;
+            _cameraLook.isFreeze = true;
+            transform.DORotateQuaternion(Quaternion.Euler(0, target.eulerAngles.y, 0), 0.5f);
         }
 
         public void UnlockRotation()

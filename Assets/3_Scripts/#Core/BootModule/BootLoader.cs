@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Leadboard;
 using UnityEngine;
 
 public class BootLoader : AbstractSingleton<BootLoader>
@@ -11,7 +10,6 @@ public class BootLoader : AbstractSingleton<BootLoader>
         var gameObj = Instantiate(gamePrefab);
         gameObj.name = "--->" + gameObj.name;
         UIManager.Instance.Show<PlayerPanel>();
-        
     }
 
 }

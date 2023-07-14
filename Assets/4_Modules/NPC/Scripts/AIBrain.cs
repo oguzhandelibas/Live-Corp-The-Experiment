@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace NPC
 {
     public class AIBrain : MonoBehaviour, IHealth
     {
+        public UnityEvent OnManagerDeath;
+        public bool isManager;
         [SerializeField] private RagdollControl _ragdollControl;
         [SerializeField] private AnimationControl _animationControl;
         [SerializeField] private EffectControl _effectControl;
@@ -43,6 +47,12 @@ namespace NPC
 
         public void Death()
         {
+            OnManagerDeath?.Invoke();
+            if (isManager)
+            {
+                UIManager.Instance.Show<LosePanel>();
+                PlayerController.Instance.LockOnly(transform);
+            }
             GetComponent<CapsuleCollider>().enabled = false;
             alive = false;
             agent.enabled = false;
