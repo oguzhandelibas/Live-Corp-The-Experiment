@@ -32,6 +32,8 @@ namespace Player
         [SerializeField] private GameObject ConsolePanel;
         [SerializeField] private GameObject MentalHealthPanel;
         [SerializeField] private GameObject StatusPanel;
+        [SerializeField] private Image locationIndicator;
+        [SerializeField] private Image soundIndicator;
 
         #endregion
 
@@ -68,7 +70,6 @@ namespace Player
             deadVolume.enabled = false;
             ResetHitSens(0);
             ResetHitSens(1);
-            
         }
 
         private void Update()
@@ -177,6 +178,12 @@ namespace Player
         public void StatusPanelActiveness(bool status)
         {
             StatusPanel.SetActive(status);
+        }
+
+        public void StatusDeactiavtion()
+        {
+            locationIndicator.color = new Color(0, 0, 0, 0.5f);
+            soundIndicator.color = new Color(0, 0, 0, 0.5f);
         }
         
         #endregion

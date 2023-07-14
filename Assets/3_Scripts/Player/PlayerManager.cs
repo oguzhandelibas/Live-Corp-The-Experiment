@@ -28,7 +28,7 @@ namespace Player
 
         private void Awake()
         {
-            SetPositionIndex(2);
+            SetPositionIndex(0);
             SpawnPlayerCharacter();
         }
 
