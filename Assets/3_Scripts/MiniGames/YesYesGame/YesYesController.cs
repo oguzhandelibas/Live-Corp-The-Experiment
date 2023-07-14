@@ -9,6 +9,7 @@ namespace MiniGame.YesYes
     public class YesYesController : MonoBehaviour
     {
         public UnityEvent OnChoose;
+        public UnityEvent OnTakeGun;
 
         [Header("Platforms")]
         [SerializeField] private ChoicePlatform yesPlatform;
@@ -81,6 +82,7 @@ namespace MiniGame.YesYes
 
         public void ActivateGunPanel()
         {
+            OnChoose?.Invoke();
             DeactivateChoosePlatform();
             AudioManager.Instance.AddAudioClip(new int[2]{16,17});
             gunPlatform.gameObject.SetActive(true);
@@ -90,7 +92,7 @@ namespace MiniGame.YesYes
 
         public void DeactivateGunPlatform()
         {
-            OnChoose?.Invoke();
+            OnTakeGun?.Invoke();
             AudioManager.Instance.AddAudioClip(new int[1]{18});
             Vector3 gunPlatformTargetPos = new Vector3(0.0f, -0.5f, 0.0f);
             gunPlatform.DOLocalMove(gunPlatformTargetPos, 0.5f).OnComplete(Deactivate);

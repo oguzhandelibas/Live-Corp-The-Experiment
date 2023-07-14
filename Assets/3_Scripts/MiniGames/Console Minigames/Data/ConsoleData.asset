@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ConsoleData
   m_EditorClassIdentifier: 
   HackCommands:
-  - EvilCorpAtWork
+  - -evilcorpatwork
