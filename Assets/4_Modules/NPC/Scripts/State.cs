@@ -31,7 +31,7 @@ namespace NPC
         protected NavMeshAgent agent;
 
         float visDist = 10.0f;
-        float visAngle = 75.0f;
+        float visAngle = 65.0f;
         float shootDist = 10.0f;
 
         public State(GameObject _npc, NavMeshAgent _agent, AnimationControl _animationControl, Transform _player, Transform[] _wayPoints)
