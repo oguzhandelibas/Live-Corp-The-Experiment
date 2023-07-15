@@ -51,7 +51,6 @@ namespace NPC
             OnManagerDeath?.Invoke();
             if (isManager)
             {
-                UIManager.Instance.Show<LosePanel>();
                 PlayerController.Instance.Death();
             }
             GetComponent<CapsuleCollider>().enabled = false;

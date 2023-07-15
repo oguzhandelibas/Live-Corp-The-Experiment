@@ -64,6 +64,7 @@ namespace Player
             deadVolume.enabled = false;
             ResetHitSens(0);
             ResetHitSens(1);
+            WakeUp();
         }
 
         private void Update()
@@ -236,7 +237,7 @@ namespace Player
                 .SetEase(Ease.Linear).OnComplete(delegate { UIManager.Instance.Show<LosePanel>(); });
         }
 
-        private void HideUI()
+        public void HideUI()
         {
             TutorialPanelActiveness(false);
             TutorialMovementActiveness(false);
