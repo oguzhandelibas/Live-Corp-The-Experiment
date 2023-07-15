@@ -248,6 +248,15 @@ namespace Player
             MentalHealthPanelActiveness(false);
         }
         #endregion
+
+        public void CloseEyes()
+        {
+            Crosshair.gameObject.SetActive(false);
+            deadVolume.enabled = true;
+            deadVolume.weight = 0.0f;
+            DOTween.To(() => deadVolume.weight, x => deadVolume.weight = x, 1, 1.5f)
+                .SetEase(Ease.Linear).OnComplete(WakeUp);
+        }
         
         public void WakeUp()
         {
