@@ -39,7 +39,7 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
 #### Sprint içinde tamamlanması tahmin edilen puan: 
 * 240 Puan
 #### Puan tamamlama mantığı: 
-Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 240 puan ile başlaması gerektiğine karar verildi.
+Toplamda proje boyunca tamamlanması gereken 560 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 240 puan ile başlaması gerektiğine karar verildi.
 #### Daily Scrum: 
 Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı tüm günlerinde de yazılı şekilde gelişmeler aktarılmıştır. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats [Daily_scrum_chats.docx](https://github.com/oguzhandelibas/u68/files/11786346/Daily_scrum_chats.docx)
 
@@ -80,9 +80,9 @@ Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğin
 ## Sprint 2
 
 ### Sprint içinde tamamlanması tahmin edilen puan: 
-* 210 Puan
+* 220 Puan
 ### Puan Tamamlama Mantığı: 
-Toplamda proje boyunca tamamlanması gereken 550 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 240 puanlık geliştirme yapılmış olup 2. Sprintte 210 puanlık kısmın tamamlanması kararlaştırılmıştır.
+Toplamda proje boyunca tamamlanması gereken 560 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 240 puanlık geliştirme yapılmış olup 2. Sprintte 220 puanlık kısmın tamamlanması kararlaştırılmıştır.
 
 ### Daily Scrum:
 Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada 3 gün sesli toplantı haftanın diğer günlerinde de yazılı şekilde gelişmeler aktarılmıştır.  Daily Scrum toplantısı yazışmaları jpeg olarak word dosyası içerisinde Readme'de paylaşılmaktadır: Sprint2-Daily Scrum Chats [Sprint2-Daily Scrum Chats.docx](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/files/11931421/Sprint2-Daily.Scrum.Chats.docx)
@@ -117,3 +117,61 @@ Alınan kararlar: Oyunun genel sürecini oluşturan mekanikler ve modüller tama
 Beklenen hedefler tutturularak başarılı bir sprint geçirilmiştir. Takım üyelerinin gelecek sprintlerde de aynı aktifliği koruması gerektiğine vurgu yapılmıştır. İlk sprintten gerekli iş akış verimi sağlanmıştır.
 
 ....................................................................................................................................
+
+## Sprint 3
+
+### Sprint içinde tamamlanması tahmin edilen puan:
+•	100 Puan
+### Puan tamamlama mantığı:
+Toplamda proje boyunca tamamlanması gereken 560 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'te daha fazla ama küçük geliştirmelerin yapılarak 240 puan ile başlaması gerektiğine karar verildi. İkinci sprintte 220 puanlık görev tamamlandı. Üçüncü sprintte ise 100 puanlık görev tamamlanarak proje teslimata hazır hale getirildi.
+
+### Daily Scrum:
+Daily Scrum toplantılarının Discord üzerinden yapılmasına karar verilmiştir. Haftada belirlenen 3 gün sesli toplantı, tüm günlerinde de yazılı şekilde gelişmeler aktarılmıştır. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 3 Daily Scrum Chats [Daily Chats.docx](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/files/12065324/Daily.Chats.docx)
+
+### Sprint 3 Notları :
+Product Backlog'daki görev kartlarının herkesçe anlaşılabilmesi adına kartların her birine kabul kriterini belirtir açıklama eklenmiştir ve iş bitirme puan sistemi oluşturulmuştur. Ayrıca her görev sprint düzeyine göre farklı renklerde etiketlenmiştir. Proje içindeki görevler farklı etiketler kullanılarak kolay anlaşılabilmesi adına kategorize edilmiştir. Bu sprintte teknik test ve görsel test yoğunlukta olmak üzere çalışmalar sürdürülmüştür. Proje API ve Analytics sistemi kurulumu tamamlanmıştır. Proje tanıtım filmi oluşturulmuştur. 
+
+### Ürün Durumu:
+* Ürünün bazı bölümlerinden ekran görüntüleri gif şeklinde Read Me'ye eklenmiştir. 
+* Üründeki mekanikler ve göz alıcı noktalar paylaşılmaktadır. 
+* Projede boyut ve mekan değiştirme özelliği olan portal oluşturma ve portal ışınlanması özelliği, silah/araç kullanma ateş etme NPC hareketleri, kaldır bırak gibi karaktere özgü mekaniklere ait görüntüler 
+ eklenmiştir. 
+* Oyun içerisinde test olarak düzenlenen reklam yerleştirme kullanılarak, bu sayede ürün piyasaya sunulması halinde reklam ve yatırımcı katkıları elde edebilmek adına ticarileştirme mekaniği uygulanmıştı . 
+* Oyuncu deneyimini arttırmak ve oyuncu hareketlerini izleyerek takip ve raporlama yapabilmek için oyun analitiği sistemi kurularak analiz yolu aktif hale getirilmiştir. 
+* Oyun analitiğini internet üzerinden Playfab API ile etkileşime geçerek arkaplan hizmetleri sağlanmış, gerçek zamanlı analiz ve veri saklama gibi hedefler gerçekleştirilmiştir. 
+* Ürün build edildiğinde tasarım ve mekanikler yüksek çözünürlüğüne ve ışıklandırmasına rağmen makul bir boyuta ulaştığı kontrolü sağlanmıştır. 
+
+![ezgif com-video-to-gif (1)](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/78fb5bd2-b019-4473-af6e-d4b96256cb86)
+![ezgif com-video-to-gif (2)](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/5299afda-1cbc-45e9-95d9-5460f5b7a0a2)
+![ezgif com-video-to-gif](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/699de548-4140-44fd-b64f-94538b5f207e)
+![ezgif com-video-to-gif (3)](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/73248ccf-1cba-4164-8c4d-1b71033f6aad)
+![ezgif com-gif-maker](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/da4dbdfd-d993-4226-bf0d-b8bba8bf6579)
+
+   
+### Sprint Board Update: Sprint board screenshotları:
+https://trello.com/b/ryeZV0tz/u68-development-workflow
+  
+ ![trello1](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/51f17ad6-d3e7-4a2e-8872-f428aa8d58ee)
+![trello2](https://github.com/oguzhandelibas/Live-Corp-The-Experiment/assets/130167514/a76c8ef3-1cdb-4e6b-9429-4bdfa8d5806e)
+
+### Sprint Review:
+* Oyunun sahne tasarımı yapılmış ve daha önce tamamlanan mekanikler ve modüller bu sprintte oyunlaştırılarak yerleştirilmiştir.
+* Oyun test aşamalarından geçirilmiştir ve çıkan sonuçlar değerlendirilerek gerekli yerlerde iyileştirmeler yapılmıştır.
+* Oyunun Playfab API ile iletişime geçerek gerçek zamanlı veri toplama ve raporlama, oyun analitiği sistemi başarılı bir şekilde entegre edilmiştir.
+* Ürünün tanıtımı için bir tanıtım filmi hazırlanmıştır.
+* Beklenen hedefler tutturularak başarılı bir sprint geçirilmiştir ve proje teslim hale getirilmiştir. 
+
+#### Sprint Review Katılımcıları:
+•	Oğuzhan Delibaş
+
+•	Aslı Rahime Erim
+
+•	Yağız Efe Atasever
+
+•	Seyfullah Niyazi Tokmak
+
+•	Fatma Nur Akdemir
+
+### Sprint Retrospective:
+Beklenen hedefler tutturularak başarılı bir sprint geçirilmiştir. Takım üyelerinin tamamlanan üç sprint boyunca azim ve özveri ile çalışılması takdir ve tebrik edilmiştir. İlk sprintten üçüncü sprint sonuna kadar gerekli iş akış verimi sağlanmıştır. 
+
