@@ -1,6 +1,8 @@
 ## Takım U-68
 This project was made during the Bootcamp process of the Google Game and Application Academy.
+
 Takım İsmi
+
 Takım Unity-68
  
 ## Ürün İle İlgili Bilgiler
