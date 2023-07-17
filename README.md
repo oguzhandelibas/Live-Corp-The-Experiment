@@ -39,11 +39,17 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
 
 ### Kullanılan Assetler
 
-https://assetstore.unity.com/packages/3d/props/weapons/wce-turret-5737#description
-
-https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913#publisher
-
+Low Poly Shooter Pack - Free Sample
 https://assetstore.unity.com/packages/templates/systems/low-poly-shooter-pack-free-sample-144839
+
+Cartoon FX Remaster (Free)
+https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+
+DOTween (HOTween v2)
+https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+
+Sci-Fi Styled Modular Pack
+https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
 
  
 ## Sprint 1
