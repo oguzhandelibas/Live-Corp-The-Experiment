@@ -51,6 +51,7 @@ https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
 Sci-Fi Styled Modular Pack
 https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
 
+https://assetstore.unity.com/packages/3d/environments/lowpoly-server-room-props-197268
  
 ## Sprint 1
 #### Sprint içinde tamamlanması tahmin edilen puan: 
