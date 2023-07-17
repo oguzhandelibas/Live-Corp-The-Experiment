@@ -36,6 +36,21 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
 4-Çipin ve Portalların Kontrolünü Ele Geçirme: Karakter, deney tesisinde ilerledikçe vücuduna yerleştirilen çipi ve tesis içindeki portalları kontrol etmeyi öğrenir. Bu yetenek sayesinde oyuncu, şirketin komutlarını geçersiz kılar ve güvenlik güçlerinden kaçarak gerçeği ortaya çıkarır.
 
 5-Taktiksel Oynanış: Oyun, strateji ve taktik becerilerini gerektiren bir oynanış sunar. Oyuncular, çevreyi inceleyerek ipuçlarını bulmalı, düşmanlardan kaçmalı ve gerekli yetenekleri kullanarak engelleri aşmalıdır.
+
+### Kullanılan Assetler
+
+Low Poly Shooter Pack - Free Sample
+https://assetstore.unity.com/packages/templates/systems/low-poly-shooter-pack-free-sample-144839
+
+Cartoon FX Remaster (Free)
+https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+
+DOTween (HOTween v2)
+https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+
+Sci-Fi Styled Modular Pack
+https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
+
  
 ## Sprint 1
 #### Sprint içinde tamamlanması tahmin edilen puan: 
