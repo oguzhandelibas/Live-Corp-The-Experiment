@@ -36,6 +36,15 @@ Atmosfer dolu bu oyunda oyuncular, Live Corp'un sırlarını ortaya çıkarmak i
 4-Çipin ve Portalların Kontrolünü Ele Geçirme: Karakter, deney tesisinde ilerledikçe vücuduna yerleştirilen çipi ve tesis içindeki portalları kontrol etmeyi öğrenir. Bu yetenek sayesinde oyuncu, şirketin komutlarını geçersiz kılar ve güvenlik güçlerinden kaçarak gerçeği ortaya çıkarır.
 
 5-Taktiksel Oynanış: Oyun, strateji ve taktik becerilerini gerektiren bir oynanış sunar. Oyuncular, çevreyi inceleyerek ipuçlarını bulmalı, düşmanlardan kaçmalı ve gerekli yetenekleri kullanarak engelleri aşmalıdır.
+
+### Kullanılan Assetler
+
+https://assetstore.unity.com/packages/3d/props/weapons/wce-turret-5737#description
+
+https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913#publisher
+
+https://assetstore.unity.com/packages/templates/systems/low-poly-shooter-pack-free-sample-144839
+
  
 ## Sprint 1
 #### Sprint içinde tamamlanması tahmin edilen puan: 
