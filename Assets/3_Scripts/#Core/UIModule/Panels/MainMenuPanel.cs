@@ -10,6 +10,16 @@ public class MainMenuPanel : View
         BootLoader.Instance.CreateGameLevel();
     }
 
+    public void _Credit()
+    {
+        UIManager.Instance.Show<CreditPanel>();
+    }
+
+    public void _Quit()
+    {
+        Application.Quit();  
+    }
+
     #endregion
     
 }
